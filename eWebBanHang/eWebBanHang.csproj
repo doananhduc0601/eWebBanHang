@@ -188,6 +188,31 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="HinhAnhSP\ban1.jpg" />
+    <Content Include="HinhAnhSP\ban2.jpg" />
+    <Content Include="HinhAnhSP\Banner.jpg" />
+    <Content Include="HinhAnhSP\banner.png" />
+    <Content Include="HinhAnhSP\iconHome.png" />
+    <Content Include="HinhAnhSP\ip3.jpg" />
+    <Content Include="HinhAnhSP\ip4.jpg" />
+    <Content Include="HinhAnhSP\ip5.jpg" />
+    <Content Include="HinhAnhSP\ip6.jpg" />
+    <Content Include="HinhAnhSP\ip7.jpg" />
+    <Content Include="HinhAnhSP\logo1.jpg" />
+    <Content Include="HinhAnhSP\mi31.jpg" />
+    <Content Include="HinhAnhSP\mi4.jpg" />
+    <Content Include="HinhAnhSP\mi5.jpg" />
+    <Content Include="HinhAnhSP\mi6.jpg" />
+    <Content Include="HinhAnhSP\mi7.jpg" />
+    <Content Include="HinhAnhSP\qc3.gif" />
+    <Content Include="HinhAnhSP\spnb1.png" />
+    <Content Include="HinhAnhSP\spnb2.png" />
+    <Content Include="HinhAnhSP\spnb3.png" />
+    <Content Include="HinhAnhSP\ss1.jpg" />
+    <Content Include="HinhAnhSP\ss2.jpg" />
+    <Content Include="HinhAnhSP\ss3.jpg" />
+    <Content Include="HinhAnhSP\ss4.jpg" />
+    <Content Include="HinhAnhSP\ss5.jpg" />
     <Content Include="Models\ShopBanHangDBcontext.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ShopBanHangDBcontext.Context.cs</LastGenOutput>
