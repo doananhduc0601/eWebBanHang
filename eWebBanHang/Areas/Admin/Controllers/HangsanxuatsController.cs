@@ -15,6 +15,7 @@ namespace eWebBanHang.Areas.Admin.Controllers
         private ShopBanHangEntities db = new ShopBanHangEntities();
 
         // GET: Admin/Hangsanxuats
+        // GET: Admin/Hangsanxuats
         public ActionResult Index()
         {
             return View(db.Hangsanxuats.ToList());
@@ -42,7 +43,7 @@ namespace eWebBanHang.Areas.Admin.Controllers
         }
 
         // POST: Admin/Hangsanxuats/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -74,7 +75,7 @@ namespace eWebBanHang.Areas.Admin.Controllers
         }
 
         // POST: Admin/Hangsanxuats/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
