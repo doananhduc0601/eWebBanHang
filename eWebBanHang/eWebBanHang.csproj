@@ -192,13 +192,15 @@
     <Content Include="HinhAnhSP\ban2.jpg" />
     <Content Include="HinhAnhSP\Banner.jpg" />
     <Content Include="HinhAnhSP\banner.png" />
+    <Content Include="HinhAnhSP\giohang.png" />
+    <Content Include="HinhAnhSP\hot_deal.png" />
     <Content Include="HinhAnhSP\iconHome.png" />
     <Content Include="HinhAnhSP\ip3.jpg" />
     <Content Include="HinhAnhSP\ip4.jpg" />
     <Content Include="HinhAnhSP\ip5.jpg" />
     <Content Include="HinhAnhSP\ip6.jpg" />
     <Content Include="HinhAnhSP\ip7.jpg" />
-    <Content Include="HinhAnhSP\logo1.jpg" />
+    <Content Include="HinhAnhSP\iphone13.png" />
     <Content Include="HinhAnhSP\mi31.jpg" />
     <Content Include="HinhAnhSP\mi4.jpg" />
     <Content Include="HinhAnhSP\mi5.jpg" />
