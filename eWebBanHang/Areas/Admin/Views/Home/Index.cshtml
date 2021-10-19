@@ -1,11 +1,12 @@
-﻿@model IEnumerable<eWebBanHang.Models.Sanpham>
+﻿
+@model PagedList.IPagedList<eWebBanHang.Models.Sanpham>
 
 @using PagedList.Mvc;
-@using PagedList;
+
 
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Quản lý sản phẩm </h2>
@@ -78,7 +79,7 @@
                 @Html.ActionLink("Xoá", "Delete", new { id = item.Masp })
             </td>
         </tr>
-}
+    }
 
 </table>
 <!-- Thêm mã phân trang -->

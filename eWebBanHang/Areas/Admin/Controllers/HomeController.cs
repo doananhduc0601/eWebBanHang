@@ -9,12 +9,10 @@ using System.Web.Mvc;
 namespace eWebBanHang.Areas.Admin.Controllers
 {
     public class HomeController : Controller
-
     {
         private ShopBanHangEntities db = new ShopBanHangEntities();
 
         // GET: Admin/Home
-
         public ActionResult Index(int? page)
         {
             // 1. Tham số int? dùng để thể hiện null và kiểu int( số nguyên)

@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Dashboard - SB Admin</title>
+    <title>BanHang</title>
     <link href="~/Content/PagedList.css" rel="stylesheet" />
-    @*<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
-        <link href="~/Content/bootstrap.css" rel="stylesheet" />*@
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+        <link href="~/Content/bootstrap.css" rel="stylesheet" />
     <link href="~/Areas/Assets/dist/css/styles.css" rel="stylesheet" />
     <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>
@@ -24,7 +24,7 @@
 </head>
 <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-success">
-        <h3>@Html.ActionLink("ICT SHOP", "Index", "Home", new { @class = "menu1" })</h3>
+        <h3>@Html.ActionLink("Nhóm Eroor", "Index", "Home", new { @class = "menu1" })</h3>
         <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#">
             <i class="fas fa-bars"></i>
         </button><!-- Navbar Search-->
@@ -84,7 +84,7 @@
 
                 <div class="sb-sidenav-footer">
                     <div class="small">Logged in as:</div>
-                    CuongIT
+                    Nhóm Error
                 </div>
             </nav>
         </div>
@@ -92,12 +92,13 @@
             <main>
                 <div class="container-fluid">
                     @RenderBody()
+                   
                 </div>
             </main>
             <footer class="py-4 bg-light mt-auto">
                 <div class="container-fluid">
                     <div class="d-flex align-items-center justify-content-between small">
-                        <div class="text-muted">Copyright &copy; Cường 2020</div>
+                        <div class="text-muted">Copyright &copy;Nhóm eror</div>
                         <div>
                             <a href="#">Privacy Policy</a>
                             &middot;
@@ -117,5 +118,6 @@
     <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
     <script src="~/Areas/Assets/dist/assets/demo/datatables-demo.js"></script>
+   
 </body>
 </html>
