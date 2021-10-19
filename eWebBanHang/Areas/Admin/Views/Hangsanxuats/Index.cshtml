@@ -1,0 +1,33 @@
+﻿@model IEnumerable<eWebBanHang.Models.Hangsanxuat>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Tenhang)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tenhang)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Mahang }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Mahang }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Mahang })
+        </td>
+    </tr>
+}
+
+</table>
