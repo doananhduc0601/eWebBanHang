@@ -135,6 +135,11 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\HangsanxuatsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HedieuhanhsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\NguoidungsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PhanQuyensController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SanphamsController.cs" />
     <Compile Include="Controllers\DanhMucController.cs" />
     <Compile Include="Controllers\DonhangsController.cs" />
     <Compile Include="Controllers\GioHangController.cs" />
@@ -240,7 +245,34 @@
     <Content Include="Models\ShopBanHangDBcontext.edmx.diagram">
       <DependentUpon>ShopBanHangDBcontext.edmx</DependentUpon>
     </Content>
+    <Content Include="Areas\Admin\Views\Hangsanxuats\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Hangsanxuats\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Hangsanxuats\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Hangsanxuats\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Hangsanxuats\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Hedieuhanhs\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Hedieuhanhs\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Hedieuhanhs\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Hedieuhanhs\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Hedieuhanhs\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Nguoidungs\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Nguoidungs\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Nguoidungs\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Nguoidungs\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Nguoidungs\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\PhanQuyens\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\PhanQuyens\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\PhanQuyens\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\PhanQuyens\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\PhanQuyens\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Sanphams\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Sanphams\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Sanphams\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Sanphams\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Sanphams\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -284,9 +316,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Controllers\" />
-    <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Areas\Admin\Views\Shared\" />
     <Folder Include="Views\DanhMuc\" />
     <Folder Include="Views\GioHang\" />
     <Folder Include="Views\User\" />
