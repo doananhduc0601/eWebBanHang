@@ -56,6 +56,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -131,6 +133,45 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\BanHangDBcontext.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BanHangDBcontext.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BanHangDBcontext.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BanHangDBcontext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BanHangDBcontext.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BanHangDBcontext.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Chitietdonhang.cs">
+      <DependentUpon>BanHangDBcontext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Donhang.cs">
+      <DependentUpon>BanHangDBcontext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Hangsanxuat.cs">
+      <DependentUpon>BanHangDBcontext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Hedieuhanh.cs">
+      <DependentUpon>BanHangDBcontext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Nguoidung.cs">
+      <DependentUpon>BanHangDBcontext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PhanQuyen.cs">
+      <DependentUpon>BanHangDBcontext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Sanpham.cs">
+      <DependentUpon>BanHangDBcontext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>BanHangDBcontext.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -142,8 +183,25 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\BanHangDBcontext.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BanHangDBcontext.edmx</DependentUpon>
+      <LastGenOutput>BanHangDBcontext.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\BanHangDBcontext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BanHangDBcontext.edmx</DependentUpon>
+      <LastGenOutput>BanHangDBcontext.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\BanHangDBcontext.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BanHangDBcontext.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\BanHangDBcontext.edmx.diagram">
+      <DependentUpon>BanHangDBcontext.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -172,7 +230,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -186,6 +243,9 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
