@@ -351,6 +351,9 @@
     <Content Include="Areas\Assets\src\scss\_variables.scss" />
     <Content Include="Areas\Admin\Views\PhanQuyens\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Nguoidungs\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Details.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
