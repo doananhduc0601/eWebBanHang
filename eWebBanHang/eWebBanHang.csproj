@@ -394,10 +394,10 @@
     <Content Include="Views\Sanphams\Details.cshtml" />
     <Content Include="Views\Sanphams\Edit.cshtml" />
     <Content Include="Views\Sanphams\xemchitiet.cshtml" />
+    <Content Include="Views\DanhMuc\DanhmucPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\DanhMuc\" />
     <Folder Include="Views\GioHang\" />
     <Folder Include="Views\User\" />
   </ItemGroup>
