@@ -1,22 +1,15 @@
 ﻿@model eWebBanHang.Models.Sanpham
+
 @{
     ViewBag.Title = "Details";
-    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
-<  <h2>Thông tin chi tiết</h2>
+
+<h2>Details</h2>
 
 <div>
-    <h4>Sản phẩm</h4>
+    <h4>Sanpham</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Hangsanxuat.Tenhang)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Hangsanxuat.Tenhang)
-        </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.Tensp)
         </dt>
@@ -49,8 +42,6 @@
             @Html.DisplayFor(model => model.Mota)
         </dd>
 
-        
-
         <dt>
             @Html.DisplayNameFor(model => model.Sanphammoi)
         </dt>
@@ -59,19 +50,25 @@
             @Html.DisplayFor(model => model.Sanphammoi)
         </dd>
 
-       
-
         <dt>
             @Html.DisplayNameFor(model => model.Anhbia)
         </dt>
 
         <dd>
-            <img src="@Url.Content(Model.Anhbia)" style="height:200px;width200px;margin:10px;"/>
+            @Html.DisplayFor(model => model.Anhbia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hangsanxuat.Tenhang)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hangsanxuat.Tenhang)
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Sửa", "Edit", new { id = Model.Masp }) |
-    @Html.ActionLink("Về trang chủ", "Index")
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Masp }) |
+    @Html.ActionLink("Back to List", "Index")
 </p>

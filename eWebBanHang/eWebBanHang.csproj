@@ -135,11 +135,11 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
-    <Compile Include="Areas\Admin\Controllers\HangsanxuatsController.cs" />
-    <Compile Include="Areas\Admin\Controllers\HedieuhanhsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\Hangsanxuats1Controller.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
-    <Compile Include="Areas\Admin\Controllers\NguoidungsController.cs" />
-    <Compile Include="Areas\Admin\Controllers\PhanQuyensController.cs" />
+    <Compile Include="Areas\Admin\Controllers\Nguoidungs1Controller.cs" />
+    <Compile Include="Areas\Admin\Controllers\RolesController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SanphamsController.cs" />
     <Compile Include="Controllers\DanhMucController.cs" />
     <Compile Include="Controllers\DonhangsController.cs" />
     <Compile Include="Controllers\GioHangController.cs" />
@@ -159,13 +159,10 @@
     <Compile Include="Models\Hangsanxuat.cs">
       <DependentUpon>ShopBanHangDBcontext.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Hedieuhanh.cs">
-      <DependentUpon>ShopBanHangDBcontext.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Nguoidung.cs">
       <DependentUpon>ShopBanHangDBcontext.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\PhanQuyen.cs">
+    <Compile Include="Models\Role.cs">
       <DependentUpon>ShopBanHangDBcontext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Sanpham.cs">
@@ -233,40 +230,44 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\add.png" />
+    <Content Include="Content\images\ban1.jpg" />
     <Content Include="Content\PagedList.css" />
+    <Content Include="images\ocung.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="HinhAnhSP\ban1.jpg" />
-    <Content Include="HinhAnhSP\ban2.jpg" />
-    <Content Include="HinhAnhSP\Banner.jpg" />
-    <Content Include="HinhAnhSP\banner.png" />
-    <Content Include="HinhAnhSP\iconHome.png" />
-    <Content Include="HinhAnhSP\ip3.jpg" />
-    <Content Include="HinhAnhSP\ip4.jpg" />
-    <Content Include="HinhAnhSP\ip5.jpg" />
-    <Content Include="HinhAnhSP\ip6.jpg" />
-    <Content Include="HinhAnhSP\ip7.jpg" />
-    <Content Include="HinhAnhSP\logo1.jpg" />
-    <Content Include="HinhAnhSP\mi31.jpg" />
-    <Content Include="HinhAnhSP\mi4.jpg" />
-    <Content Include="HinhAnhSP\mi5.jpg" />
-    <Content Include="HinhAnhSP\mi6.jpg" />
-    <Content Include="HinhAnhSP\mi7.jpg" />
-    <Content Include="HinhAnhSP\qc3.gif" />
-    <Content Include="HinhAnhSP\spnb1.png" />
-    <Content Include="HinhAnhSP\spnb2.png" />
-    <Content Include="HinhAnhSP\spnb3.png" />
-    <Content Include="HinhAnhSP\ss1.jpg" />
-    <Content Include="HinhAnhSP\ss2.jpg" />
-    <Content Include="HinhAnhSP\ss3.jpg" />
-    <Content Include="HinhAnhSP\ss4.jpg" />
-    <Content Include="HinhAnhSP\ss5.jpg" />
+    <Content Include="images\ban1.jpg" />
+    <Content Include="images\ban2.jpg" />
+    <Content Include="images\Banner.jpg" />
+    <Content Include="images\banner.png" />
+    <Content Include="images\iconHome.png" />
+    <Content Include="images\ip3.jpg" />
+    <Content Include="images\ip4.jpg" />
+    <Content Include="images\ip5.jpg" />
+    <Content Include="images\ip6.jpg" />
+    <Content Include="images\ip7.jpg" />
+    <Content Include="images\logo1.jpg" />
+    <Content Include="images\mi31.jpg" />
+    <Content Include="images\mi4.jpg" />
+    <Content Include="images\mi5.jpg" />
+    <Content Include="images\mi6.jpg" />
+    <Content Include="images\mi7.jpg" />
+    <Content Include="images\qc3.gif" />
+    <Content Include="images\spnb1.png" />
+    <Content Include="images\spnb2.png" />
+    <Content Include="images\spnb3.png" />
+    <Content Include="images\ss1.jpg" />
+    <Content Include="images\ss2.jpg" />
+    <Content Include="images\ss3.jpg" />
+    <Content Include="images\ss4.jpg" />
+    <Content Include="images\ss5.jpg" />
+    <Content Include="images\tvsony.jpg" />
     <Content Include="Models\ShopBanHangDBcontext.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ShopBanHangDBcontext.Context.cs</LastGenOutput>
       <DependentUpon>ShopBanHangDBcontext.edmx</DependentUpon>
+      <LastGenOutput>ShopBanHangDBcontext.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Models\ShopBanHangDBcontext.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -275,31 +276,11 @@
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\ShopBanHangDBcontext.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ShopBanHangDBcontext.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\ShopBanHangDBcontext.edmx.diagram">
-      <DependentUpon>ShopBanHangDBcontext.edmx</DependentUpon>
-    </Content>
-    <Content Include="Areas\Admin\Views\Hangsanxuats\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\Hangsanxuats\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\Hangsanxuats\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\Hangsanxuats\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\Hangsanxuats\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Hedieuhanhs\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Hedieuhanhs\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\Hedieuhanhs\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Hedieuhanhs\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Hedieuhanhs\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Nguoidungs\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\Nguoidungs\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\Nguoidungs\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\Nguoidungs\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\PhanQuyens\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\PhanQuyens\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\PhanQuyens\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\PhanQuyens\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
@@ -349,11 +330,36 @@
     <Content Include="Areas\Assets\src\scss\variables\_spacing.scss" />
     <Content Include="Areas\Assets\src\scss\_global.scss" />
     <Content Include="Areas\Assets\src\scss\_variables.scss" />
-    <Content Include="Areas\Admin\Views\PhanQuyens\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\Nguoidungs\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Roles\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Roles\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Roles\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Roles\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Roles\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Nguoidungs1\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Nguoidungs1\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Nguoidungs1\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Nguoidungs1\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Nguoidungs1\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Hangsanxuats1\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Hangsanxuats1\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Hangsanxuats1\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Hangsanxuats1\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Hangsanxuats1\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Sanphams\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Sanphams\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Sanphams\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Sanphams\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Sanphams\Index.cshtml" />
+    <EntityDeploy Include="Models\ShopBanHangDBcontext.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ShopBanHangDBcontext.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ShopBanHangDBcontext.edmx.diagram">
+      <DependentUpon>ShopBanHangDBcontext.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -365,6 +371,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\scrip.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -378,7 +385,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Donhangs\Create.cshtml" />
     <Content Include="Views\Donhangs\Delete.cshtml" />
     <Content Include="Views\Donhangs\Details.cshtml" />
@@ -395,6 +401,7 @@
     <Content Include="Views\Sanphams\Edit.cshtml" />
     <Content Include="Views\Sanphams\xemchitiet.cshtml" />
     <Content Include="Views\DanhMuc\DanhmucPartial.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

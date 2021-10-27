@@ -9,7 +9,7 @@ namespace eWebBanHang.Controllers
 {
     public class GioHangController : Controller
     {
-        private ShopBanHangEntities db = new ShopBanHangEntities();
+        private Entities db = new Entities();
         // GET: GioHang
         //Lấy giỏ hàng 
         public List<GioHang> LayGioHang()
@@ -187,7 +187,7 @@ namespace eWebBanHang.Controllers
                 ctDH.Masp = item.iMasp;
                 ctDH.Soluong = item.iSoLuong;
                 ctDH.Dongia = (decimal)item.dDonGia;
-                ctDH.Thanhtien = (decimal)thanhtien;
+                //ctDH.Thanhtien = (decimal)thanhtien;
                 db.Chitietdonhangs.Add(ctDH);
             }
             db.SaveChanges();

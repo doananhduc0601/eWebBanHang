@@ -12,18 +12,18 @@ namespace eWebBanHang.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Hedieuhanh
+    public partial class Role
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Hedieuhanh()
+        public Role()
         {
-            this.Sanphams = new HashSet<Sanpham>();
+            this.Nguoidungs = new HashSet<Nguoidung>();
         }
     
-        public int Mahdh { get; set; }
-        public string Tenhdh { get; set; }
+        public int IDQuyen { get; set; }
+        public string TenQuyen { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Sanpham> Sanphams { get; set; }
+        public virtual ICollection<Nguoidung> Nguoidungs { get; set; }
     }
 }

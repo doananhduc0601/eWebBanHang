@@ -10,107 +10,107 @@ using eWebBanHang.Models;
 
 namespace eWebBanHang.Areas.Admin.Controllers
 {
-    public class PhanQuyensController : Controller
+    public class Hangsanxuats1Controller : Controller
     {
-        private ShopBanHangEntities db = new ShopBanHangEntities();
+        private Entities db = new Entities();
 
-        // GET: Admin/PhanQuyens
+        // GET: Admin/Hangsanxuats1
         public ActionResult Index()
         {
-            return View(db.PhanQuyens.ToList());
+            return View(db.Hangsanxuats.ToList());
         }
 
-        // GET: Admin/PhanQuyens/Details/5
+        // GET: Admin/Hangsanxuats1/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PhanQuyen phanQuyen = db.PhanQuyens.Find(id);
-            if (phanQuyen == null)
+            Hangsanxuat hangsanxuat = db.Hangsanxuats.Find(id);
+            if (hangsanxuat == null)
             {
                 return HttpNotFound();
             }
-            return View(phanQuyen);
+            return View(hangsanxuat);
         }
 
-        // GET: Admin/PhanQuyens/Create
+        // GET: Admin/Hangsanxuats1/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Admin/PhanQuyens/Create
+        // POST: Admin/Hangsanxuats1/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IDQuyen,TenQuyen")] PhanQuyen phanQuyen)
+        public ActionResult Create([Bind(Include = "Mahang,Tenhang")] Hangsanxuat hangsanxuat)
         {
             if (ModelState.IsValid)
             {
-                db.PhanQuyens.Add(phanQuyen);
+                db.Hangsanxuats.Add(hangsanxuat);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(phanQuyen);
+            return View(hangsanxuat);
         }
 
-        // GET: Admin/PhanQuyens/Edit/5
+        // GET: Admin/Hangsanxuats1/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PhanQuyen phanQuyen = db.PhanQuyens.Find(id);
-            if (phanQuyen == null)
+            Hangsanxuat hangsanxuat = db.Hangsanxuats.Find(id);
+            if (hangsanxuat == null)
             {
                 return HttpNotFound();
             }
-            return View(phanQuyen);
+            return View(hangsanxuat);
         }
 
-        // POST: Admin/PhanQuyens/Edit/5
+        // POST: Admin/Hangsanxuats1/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IDQuyen,TenQuyen")] PhanQuyen phanQuyen)
+        public ActionResult Edit([Bind(Include = "Mahang,Tenhang")] Hangsanxuat hangsanxuat)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(phanQuyen).State = EntityState.Modified;
+                db.Entry(hangsanxuat).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(phanQuyen);
+            return View(hangsanxuat);
         }
 
-        // GET: Admin/PhanQuyens/Delete/5
+        // GET: Admin/Hangsanxuats1/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PhanQuyen phanQuyen = db.PhanQuyens.Find(id);
-            if (phanQuyen == null)
+            Hangsanxuat hangsanxuat = db.Hangsanxuats.Find(id);
+            if (hangsanxuat == null)
             {
                 return HttpNotFound();
             }
-            return View(phanQuyen);
+            return View(hangsanxuat);
         }
 
-        // POST: Admin/PhanQuyens/Delete/5
+        // POST: Admin/Hangsanxuats1/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            PhanQuyen phanQuyen = db.PhanQuyens.Find(id);
-            db.PhanQuyens.Remove(phanQuyen);
+            Hangsanxuat hangsanxuat = db.Hangsanxuats.Find(id);
+            db.Hangsanxuats.Remove(hangsanxuat);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -2,15 +2,19 @@
 using PagedList;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+
+
 
 namespace eWebBanHang.Areas.Admin.Controllers
 {
     public class HomeController : Controller
     {
-        private ShopBanHangEntities db = new ShopBanHangEntities();
+        private Entities db = new Entities();
 
         // GET: Admin/Home
         public ActionResult Index(int? page)
@@ -44,15 +48,14 @@ namespace eWebBanHang.Areas.Admin.Controllers
             return View(dt);
         }
 
-        // Tạo sản phẩm mới phương thức GET: Admin/Home/Create
+       // Tạo sản phẩm mới phương thức GET: Admin/Home/Create
         public ActionResult Create()
         {
             //Để tạo dropdownList bên view
+            Sanpham sanpham= new Sanpham();
             var hangselected = new SelectList(db.Hangsanxuats, "Mahang", "Tenhang");
             ViewBag.Mahang = hangselected;
-            var hdhselected = new SelectList(db.Hedieuhanhs, "Mahdh", "Tenhdh");
-            ViewBag.Mahdh = hdhselected;
-            return View();
+            return View(sanpham);
         }
 
         // Tạo sản phẩm mới phương thức POST: Admin/Home/Create
@@ -61,11 +64,17 @@ namespace eWebBanHang.Areas.Admin.Controllers
         {
             try
             {
-                //Thêm  sản phẩm mới
+              
+                if(sanpham.ImageUpload!=null)
+                {
+                    string fileName = Path.GetFileNameWithoutExtension(sanpham.ImageUpload.FileName);
+                    string extension = Path.GetExtension(sanpham.ImageUpload.FileName);
+                    fileName = fileName + extension;
+                    sanpham.Anhbia = "~/Content/images/" + fileName;
+                    sanpham.ImageUpload.SaveAs(Path.Combine(Server.MapPath("~/Content/images/"),fileName));
+                }
                 db.Sanphams.Add(sanpham);
-                // Lưu lại
                 db.SaveChanges();
-                // Thành công chuyển đến trang index
                 return RedirectToAction("Index");
             }
             catch
@@ -74,41 +83,38 @@ namespace eWebBanHang.Areas.Admin.Controllers
             }
         }
 
-        // Sửa sản phẩm GET lấy ra ID sản phẩm: Admin/Home/Edit/5
+        //Sửa sản phẩm GET lấy ra ID sản phẩm: Admin/Home/Edit/5
         public ActionResult Edit(int id)
         {
             // Hiển thị dropdownlist
             var dt = db.Sanphams.Find(id);
             var hangselected = new SelectList(db.Hangsanxuats, "Mahang", "Tenhang", dt.Mahang);
             ViewBag.Mahang = hangselected;
-            var hdhselected = new SelectList(db.Hedieuhanhs, "Mahdh", "Tenhdh", dt.Mahdh);
-            ViewBag.Mahdh = hdhselected;
-            // 
+            //var hdhselected = new SelectList(db.Hedieuhanhs, "Mahdh", "Tenhdh", dt.Mahdh);
+            //ViewBag.Mahdh = hdhselected;
+            //// 
             return View(dt);
 
         }
 
         // POST: Admin/Home/Edit/5
         [HttpPost]
-        public ActionResult Edit(Sanpham sanpham)
+        public ActionResult Edit(int id,Sanpham sanpham)
         {
             try
             {
-                // Sửa sản phẩm theo mã sản phẩm
-                var oldItem = db.Sanphams.Find(sanpham.Masp);
-                oldItem.Tensp = sanpham.Tensp;
-                oldItem.Giatien = sanpham.Giatien;
-                oldItem.Soluong = sanpham.Soluong;
-                oldItem.Mota = sanpham.Mota;
-                oldItem.Anhbia = sanpham.Anhbia;
-                oldItem.Bonhotrong = sanpham.Bonhotrong;
-                oldItem.Ram = sanpham.Ram;
-                oldItem.Thesim = sanpham.Thesim;
-                oldItem.Mahang = sanpham.Mahang;
-                oldItem.Mahdh = sanpham.Mahdh;
-                // lưu lại
+
+                if (sanpham.ImageUpload != null)
+                {
+                    string fileName = Path.GetFileNameWithoutExtension(sanpham.ImageUpload.FileName);
+                    string extension = Path.GetExtension(sanpham.ImageUpload.FileName);
+                    fileName = fileName + extension;
+                    sanpham.Anhbia = "~/Content/images/" + fileName;
+                    sanpham.ImageUpload.SaveAs(Path.Combine(Server.MapPath("~/Content/images/"), fileName));
+                }
+                db.Entry(sanpham).State = EntityState.Modified;
+                
                 db.SaveChanges();
-                // xong chuyển qua index
                 return RedirectToAction("Index");
             }
             catch
@@ -143,6 +149,9 @@ namespace eWebBanHang.Areas.Admin.Controllers
             {
                 return View();
             }
+
+
         }
+ 
     }
 }

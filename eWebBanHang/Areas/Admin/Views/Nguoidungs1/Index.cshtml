@@ -28,7 +28,7 @@
             @Html.DisplayNameFor(model => model.Diachi)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.PhanQuyen.TenQuyen)
+            @Html.DisplayNameFor(model => model.Role.TenQuyen)
         </th>
         <th></th>
     </tr>
@@ -51,7 +51,7 @@
             @Html.DisplayFor(modelItem => item.Diachi)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.PhanQuyen.TenQuyen)
+            @Html.DisplayFor(modelItem => item.Role.TenQuyen)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.MaNguoiDung }) |

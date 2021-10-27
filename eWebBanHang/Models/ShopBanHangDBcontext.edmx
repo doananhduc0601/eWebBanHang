@@ -31,13 +31,6 @@
           <Property Name="Mahang" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Tenhang" Type="nchar" MaxLength="10" />
         </EntityType>
-        <EntityType Name="Hedieuhanh">
-          <Key>
-            <PropertyRef Name="Mahdh" />
-          </Key>
-          <Property Name="Mahdh" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Tenhdh" Type="nchar" MaxLength="10" />
-        </EntityType>
         <EntityType Name="Nguoidung">
           <Key>
             <PropertyRef Name="MaNguoiDung" />
@@ -50,7 +43,7 @@
           <Property Name="IDQuyen" Type="int" />
           <Property Name="Diachi" Type="nvarchar" MaxLength="100" />
         </EntityType>
-        <EntityType Name="PhanQuyen">
+        <EntityType Name="Role">
           <Key>
             <PropertyRef Name="IDQuyen" />
           </Key>
@@ -66,13 +59,9 @@
           <Property Name="Giatien" Type="decimal" Precision="18" Scale="0" />
           <Property Name="Soluong" Type="int" />
           <Property Name="Mota" Type="ntext" />
-          <Property Name="Thesim" Type="int" />
-          <Property Name="Bonhotrong" Type="int" />
           <Property Name="Sanphammoi" Type="bit" />
-          <Property Name="Ram" Type="int" />
-          <Property Name="Anhbia" Type="nvarchar" MaxLength="10" />
+          <Property Name="Anhbia" Type="nvarchar" MaxLength="500" />
           <Property Name="Mahang" Type="int" />
-          <Property Name="Mahdh" Type="int" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -121,10 +110,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Nguoidung_Nguoidung">
-          <End Role="PhanQuyen" Type="Self.PhanQuyen" Multiplicity="0..1" />
+          <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
           <End Role="Nguoidung" Type="Self.Nguoidung" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="PhanQuyen">
+            <Principal Role="Role">
               <PropertyRef Name="IDQuyen" />
             </Principal>
             <Dependent Role="Nguoidung">
@@ -144,25 +133,12 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Sanpham_Hedieuhanh">
-          <End Role="Hedieuhanh" Type="Self.Hedieuhanh" Multiplicity="0..1" />
-          <End Role="Sanpham" Type="Self.Sanpham" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Hedieuhanh">
-              <PropertyRef Name="Mahdh" />
-            </Principal>
-            <Dependent Role="Sanpham">
-              <PropertyRef Name="Mahdh" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="ShopBanHangModelStoreContainer">
           <EntitySet Name="Chitietdonhang" EntityType="Self.Chitietdonhang" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Donhang" EntityType="Self.Donhang" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Hangsanxuat" EntityType="Self.Hangsanxuat" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Hedieuhanh" EntityType="Self.Hedieuhanh" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Nguoidung" EntityType="Self.Nguoidung" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="PhanQuyen" EntityType="Self.PhanQuyen" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Sanpham" EntityType="Self.Sanpham" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Chitietdonhang_Donhang" Association="Self.FK_Chitietdonhang_Donhang">
@@ -178,15 +154,11 @@
             <End Role="Donhang" EntitySet="Donhang" />
           </AssociationSet>
           <AssociationSet Name="FK_Nguoidung_Nguoidung" Association="Self.FK_Nguoidung_Nguoidung">
-            <End Role="PhanQuyen" EntitySet="PhanQuyen" />
+            <End Role="Role" EntitySet="Role" />
             <End Role="Nguoidung" EntitySet="Nguoidung" />
           </AssociationSet>
           <AssociationSet Name="FK_Sanpham_Hangsanxuat" Association="Self.FK_Sanpham_Hangsanxuat">
             <End Role="Hangsanxuat" EntitySet="Hangsanxuat" />
-            <End Role="Sanpham" EntitySet="Sanpham" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Sanpham_Hedieuhanh" Association="Self.FK_Sanpham_Hedieuhanh">
-            <End Role="Hedieuhanh" EntitySet="Hedieuhanh" />
             <End Role="Sanpham" EntitySet="Sanpham" />
           </AssociationSet>
         </EntityContainer>
@@ -226,14 +198,6 @@
           <Property Name="Tenhang" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="Sanphams" Relationship="Self.FK_Sanpham_Hangsanxuat" FromRole="Hangsanxuat" ToRole="Sanpham" />
         </EntityType>
-        <EntityType Name="Hedieuhanh">
-          <Key>
-            <PropertyRef Name="Mahdh" />
-          </Key>
-          <Property Name="Mahdh" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Tenhdh" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <NavigationProperty Name="Sanphams" Relationship="Self.FK_Sanpham_Hedieuhanh" FromRole="Hedieuhanh" ToRole="Sanpham" />
-        </EntityType>
         <EntityType Name="Nguoidung">
           <Key>
             <PropertyRef Name="MaNguoiDung" />
@@ -246,15 +210,15 @@
           <Property Name="IDQuyen" Type="Int32" />
           <Property Name="Diachi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Donhangs" Relationship="Self.FK_Donhang_Khachhang" FromRole="Nguoidung" ToRole="Donhang" />
-          <NavigationProperty Name="PhanQuyen" Relationship="Self.FK_Nguoidung_Nguoidung" FromRole="Nguoidung" ToRole="PhanQuyen" />
+          <NavigationProperty Name="Role" Relationship="Self.FK_Nguoidung_Nguoidung" FromRole="Nguoidung" ToRole="Role" />
         </EntityType>
-        <EntityType Name="PhanQuyen">
+        <EntityType Name="Role">
           <Key>
             <PropertyRef Name="IDQuyen" />
           </Key>
           <Property Name="IDQuyen" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TenQuyen" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Nguoidungs" Relationship="Self.FK_Nguoidung_Nguoidung" FromRole="PhanQuyen" ToRole="Nguoidung" />
+          <NavigationProperty Name="Nguoidungs" Relationship="Self.FK_Nguoidung_Nguoidung" FromRole="Role" ToRole="Nguoidung" />
         </EntityType>
         <EntityType Name="Sanpham">
           <Key>
@@ -265,16 +229,11 @@
           <Property Name="Giatien" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="Soluong" Type="Int32" />
           <Property Name="Mota" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Thesim" Type="Int32" />
-          <Property Name="Bonhotrong" Type="Int32" />
           <Property Name="Sanphammoi" Type="Boolean" />
-          <Property Name="Ram" Type="Int32" />
-          <Property Name="Anhbia" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Anhbia" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="Mahang" Type="Int32" />
-          <Property Name="Mahdh" Type="Int32" />
           <NavigationProperty Name="Chitietdonhangs" Relationship="Self.FK_Chitietdonhang_Sanpham" FromRole="Sanpham" ToRole="Chitietdonhang" />
           <NavigationProperty Name="Hangsanxuat" Relationship="Self.FK_Sanpham_Hangsanxuat" FromRole="Sanpham" ToRole="Hangsanxuat" />
-          <NavigationProperty Name="Hedieuhanh" Relationship="Self.FK_Sanpham_Hedieuhanh" FromRole="Sanpham" ToRole="Hedieuhanh" />
         </EntityType>
         <EntityType Name="sysdiagram">
           <Key>
@@ -334,23 +293,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Sanpham_Hedieuhanh">
-          <End Role="Hedieuhanh" Type="Self.Hedieuhanh" Multiplicity="0..1" />
-          <End Role="Sanpham" Type="Self.Sanpham" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Hedieuhanh">
-              <PropertyRef Name="Mahdh" />
-            </Principal>
-            <Dependent Role="Sanpham">
-              <PropertyRef Name="Mahdh" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Nguoidung_Nguoidung">
-          <End Role="PhanQuyen" Type="Self.PhanQuyen" Multiplicity="0..1" />
+          <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
           <End Role="Nguoidung" Type="Self.Nguoidung" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="PhanQuyen">
+            <Principal Role="Role">
               <PropertyRef Name="IDQuyen" />
             </Principal>
             <Dependent Role="Nguoidung">
@@ -358,13 +305,12 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ShopBanHangEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Chitietdonhangs" EntityType="Self.Chitietdonhang" />
           <EntitySet Name="Donhangs" EntityType="Self.Donhang" />
           <EntitySet Name="Hangsanxuats" EntityType="Self.Hangsanxuat" />
-          <EntitySet Name="Hedieuhanhs" EntityType="Self.Hedieuhanh" />
           <EntitySet Name="Nguoidungs" EntityType="Self.Nguoidung" />
-          <EntitySet Name="PhanQuyens" EntityType="Self.PhanQuyen" />
+          <EntitySet Name="Roles" EntityType="Self.Role" />
           <EntitySet Name="Sanphams" EntityType="Self.Sanpham" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <AssociationSet Name="FK_Chitietdonhang_Donhang" Association="Self.FK_Chitietdonhang_Donhang">
@@ -383,12 +329,8 @@
             <End Role="Hangsanxuat" EntitySet="Hangsanxuats" />
             <End Role="Sanpham" EntitySet="Sanphams" />
           </AssociationSet>
-          <AssociationSet Name="FK_Sanpham_Hedieuhanh" Association="Self.FK_Sanpham_Hedieuhanh">
-            <End Role="Hedieuhanh" EntitySet="Hedieuhanhs" />
-            <End Role="Sanpham" EntitySet="Sanphams" />
-          </AssociationSet>
           <AssociationSet Name="FK_Nguoidung_Nguoidung" Association="Self.FK_Nguoidung_Nguoidung">
-            <End Role="PhanQuyen" EntitySet="PhanQuyens" />
+            <End Role="Role" EntitySet="Roles" />
             <End Role="Nguoidung" EntitySet="Nguoidungs" />
           </AssociationSet>
         </EntityContainer>
@@ -397,7 +339,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ShopBanHangModelStoreContainer" CdmEntityContainer="ShopBanHangEntities">
+        <EntityContainerMapping StorageEntityContainer="ShopBanHangModelStoreContainer" CdmEntityContainer="Entities">
           <EntitySetMapping Name="Chitietdonhangs">
             <EntityTypeMapping TypeName="ShopBanHangModel.Chitietdonhang">
               <MappingFragment StoreEntitySet="Chitietdonhang">
@@ -426,14 +368,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Hedieuhanhs">
-            <EntityTypeMapping TypeName="ShopBanHangModel.Hedieuhanh">
-              <MappingFragment StoreEntitySet="Hedieuhanh">
-                <ScalarProperty Name="Mahdh" ColumnName="Mahdh" />
-                <ScalarProperty Name="Tenhdh" ColumnName="Tenhdh" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Nguoidungs">
             <EntityTypeMapping TypeName="ShopBanHangModel.Nguoidung">
               <MappingFragment StoreEntitySet="Nguoidung">
@@ -447,9 +381,9 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="PhanQuyens">
-            <EntityTypeMapping TypeName="ShopBanHangModel.PhanQuyen">
-              <MappingFragment StoreEntitySet="PhanQuyen">
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="ShopBanHangModel.Role">
+              <MappingFragment StoreEntitySet="Role">
                 <ScalarProperty Name="IDQuyen" ColumnName="IDQuyen" />
                 <ScalarProperty Name="TenQuyen" ColumnName="TenQuyen" />
               </MappingFragment>
@@ -463,13 +397,9 @@
                 <ScalarProperty Name="Giatien" ColumnName="Giatien" />
                 <ScalarProperty Name="Soluong" ColumnName="Soluong" />
                 <ScalarProperty Name="Mota" ColumnName="Mota" />
-                <ScalarProperty Name="Thesim" ColumnName="Thesim" />
-                <ScalarProperty Name="Bonhotrong" ColumnName="Bonhotrong" />
                 <ScalarProperty Name="Sanphammoi" ColumnName="Sanphammoi" />
-                <ScalarProperty Name="Ram" ColumnName="Ram" />
                 <ScalarProperty Name="Anhbia" ColumnName="Anhbia" />
                 <ScalarProperty Name="Mahang" ColumnName="Mahang" />
-                <ScalarProperty Name="Mahdh" ColumnName="Mahdh" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

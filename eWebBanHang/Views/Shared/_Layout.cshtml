@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - ShopBanHang</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    @*@Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")*@
     <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
     <link rel=" stylesheet" href="~/Content/Style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -21,8 +21,8 @@
         }
 
         .navbar-inverse {
-            background-color: #39B54A;
-            border-color: #39B54A;
+            background-color: #white;
+            border-color: #black;
         }
 
         .top_header {
@@ -77,9 +77,9 @@
 
 <body>
 
-    @{
+    @*@{
         var u = Session["use"] as eWebBanHang.Models.Nguoidung;
-    }
+    }*@
 
     <div class="navbar navbar-inverse navbar-fixed-top">
 
@@ -126,7 +126,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <img class="navbar-brand" src="~/HinhAnhSP/iconHome.png" width="50" height="50" style="padding:0" />
-                @Html.ActionLink(" ShopBanHang", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @*@Html.ActionLink(" ShopBanHang", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
                 <form class="form-inline" style="float:left">
                     <input class="form-control mr-sm-2" type="search" placeholder="Tìm kiếm sản phẩm..." aria-label="Search">
                     @*<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>*@
@@ -172,7 +172,7 @@
                     <li>
                         <a style="color:white"
                            class="nav-link"
-                           href="@Url.Action("Index", "DonHangs")">ĐƠN HÀNG</a>
+                           @*href="@Url.Action("Index", "DonHangs")">ĐƠN HÀNG</a>*@
                     </li>
                 </ul>
             </div>
@@ -243,8 +243,8 @@
 
 
 
-    @Scripts.Render("~/bundles/jquery")
+    @*@Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    @RenderSection("scripts", required: false)*@
 </body>
 </html>

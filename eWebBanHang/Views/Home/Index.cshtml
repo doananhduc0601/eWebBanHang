@@ -1,6 +1,8 @@
 ﻿@{
     ViewBag.Title = "eWebBanHang";
 
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
 }
 
 
@@ -8,7 +10,7 @@
 <div class="row">
     <div class="col-md-8">
         <img src="~/HinhAnhSP/Banner.jpg" class="img-responsive" alt="" />
-         @*@Html.Action("SlidePartial", "Home")*@
+        @*@Html.Action("SlidePartial", "Home")*@
     </div>
     <div class="col-md-4">
         <img src="~/HinhAnhSP/qc3.gif" class="img-responsive" alt="" />
@@ -35,17 +37,17 @@
     </div>
 </div>
 <div class="danhmuc">
-    @Html.Action("DanhmucPartial", "Danhmuc")
+    @*@Html.Action("DanhmucPartial", "Danhmuc")*@
 </div>
 @*<div class="dt">
-    @Html.Action("dtiphonePartial", "Sanpham")
-</div>*@
+        @Html.Action("dtiphonePartial", "Sanpham")
+    </div>*@
 @*<div class="dt">
-    @Html.Action("dtsamsungpartial", "Sanpham")
-</div>
-<div class="dt">
-    @Html.Action("dtxiaomipartial", "Sanpham")
-</div>*@
+        @Html.Action("dtsamsungpartial", "Sanpham")
+    </div>
+    <div class="dt">
+        @Html.Action("dtxiaomipartial", "Sanpham")
+    </div>*@
 
 <div class="row">
     <h2> Tin tức sản phẩm</h2>
@@ -56,3 +58,4 @@
         Tin tức
     </div>
 </div>
+

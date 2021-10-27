@@ -13,10 +13,10 @@ namespace eWebBanHang.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ShopBanHangEntities : DbContext
+    public partial class Entities : DbContext
     {
-        public ShopBanHangEntities()
-            : base("name=ShopBanHangEntities")
+        public Entities()
+            : base("name=Entities")
         {
         }
     
@@ -28,9 +28,8 @@ namespace eWebBanHang.Models
         public virtual DbSet<Chitietdonhang> Chitietdonhangs { get; set; }
         public virtual DbSet<Donhang> Donhangs { get; set; }
         public virtual DbSet<Hangsanxuat> Hangsanxuats { get; set; }
-        public virtual DbSet<Hedieuhanh> Hedieuhanhs { get; set; }
         public virtual DbSet<Nguoidung> Nguoidungs { get; set; }
-        public virtual DbSet<PhanQuyen> PhanQuyens { get; set; }
+        public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<Sanpham> Sanphams { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
     }

@@ -18,7 +18,7 @@ namespace eWebBanHang.Models
         public int Masp { get; set; }
         public Nullable<int> Soluong { get; set; }
         public Nullable<decimal> Dongia { get; set; }
-        public decimal? Thanhtien { get; set; }
+    
         public virtual Donhang Donhang { get; set; }
         public virtual Sanpham Sanpham { get; set; }
     }

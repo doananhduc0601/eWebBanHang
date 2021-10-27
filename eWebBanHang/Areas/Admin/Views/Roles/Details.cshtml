@@ -1,18 +1,18 @@
-﻿@model eWebBanHang.Models.PhanQuyen
+﻿@model eWebBanHang.Models.Role
 
 @{
     ViewBag.Title = "Details";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Chi tiết</h2>
+<h2>Details</h2>
 
 <div>
-    <h4>Phân quyền</h4>
+    <h4>Role</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            Tên quyền
+            @Html.DisplayNameFor(model => model.TenQuyen)
         </dt>
 
         <dd>
