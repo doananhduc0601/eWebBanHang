@@ -14,7 +14,7 @@ namespace eWebBanHang.Models
         //    get { return iMaSP; }
         //    set { iMaSP = value; }
         //}
-        ShopBanHangEntities db = new ShopBanHangEntities();
+        Entities db = new Entities();
         public int iMasp { get; set; }
         public string sTensp { get; set; }
         public string sAnhBia { get; set; }

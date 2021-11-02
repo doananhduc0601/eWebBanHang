@@ -14,16 +14,19 @@
     <link href="~/Areas/Assets/dist/css/styles.css" rel="stylesheet" />
     <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>
-
+    <script src="~/Scripts/scrip.js"></script>
     <style type="text/css">
         .menu1 {
             color: white;
             padding-left: 20px;
+            font-size:30px;
+            
         }
+      
     </style>
 </head>
 <body class="sb-nav-fixed">
-    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-success">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
         <h3>@Html.ActionLink("Nhóm Eroor", "Index", "Home", new { @class = "menu1" })</h3>
         <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#">
             <i class="fas fa-bars"></i>
@@ -31,7 +34,7 @@
         <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
             <div class="input-group">
                 <input class="form-control" type="text" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" />
-                <div class="input-group-append">
+                <div class="input-group-append" style="margin-left:0px">
                     <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
                 </div>
             </div>
@@ -53,26 +56,26 @@
         <div id="layoutSidenav_nav">
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                 <div class="sb-sidenav-menu">
-                    <div class="nav">
-                        <div class="sb-sidenav-menu-heading" style="color:white"> <h5>Quản lý</h5></div>
-                        <div style="padding-left:20px">
-                            @Html.ActionLink("Sản phẩm", "Index", "Home")
+                    <div class="nav" style="font-size:20px; margin-top:20px; margin-left:30px;">
+                        <div class="sb-sidenav-menu-heading" style="color:white;margin-bottom:40px; "> <h2>Quản lý</h2></div>
+                        <div style="margin-left:20px ; color:white" ;>
+                            @Html.ActionLink("Product", "Index", "Home")
                         </div>
                         <br />
-                        <div style="padding-left:20px">
-                            @Html.ActionLink("Hãng sản xuất", "Index", "Hangsanxuats")
+                        <div style="margin-left: 20px">
+                            @Html.ActionLink("Category", "Index", "Hangsanxuats1")
                         </div>
                         <br />
-                        <div style="padding-left:20px">
-                            @Html.ActionLink("Hệ điều hành", "Index", "Hedieuhanhs")
+                        @*<div style="margin-left: 20px">
+                                @Html.ActionLink("Phiên Bản", "Index", "Hedieuhanhs")
+                            </div>
+                            <br />*@
+                        <div style="margin-left: 20px">
+                            @Html.ActionLink("User", "Index", "Nguoidungs1")
                         </div>
                         <br />
-                        <div style="padding-left:20px">
-                            @Html.ActionLink("Người dùng", "Index", "Nguoidungs")
-                        </div>
-                        <br />
-                        <div style="padding-left:20px">
-                            @Html.ActionLink("Phân quyền", "Index", "Phanquyens")
+                        <div style="margin-left: 20px">
+                            @Html.ActionLink("Role", "Index", "Roles")
                         </div>
 
                         @*<a class="nav-link" href="Home">
@@ -92,7 +95,7 @@
             <main>
                 <div class="container-fluid">
                     @RenderBody()
-                   
+
                 </div>
             </main>
             <footer class="py-4 bg-light mt-auto">
@@ -118,6 +121,5 @@
     <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
     <script src="~/Areas/Assets/dist/assets/demo/datatables-demo.js"></script>
-   
 </body>
 </html>

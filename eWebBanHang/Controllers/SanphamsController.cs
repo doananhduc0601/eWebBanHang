@@ -12,17 +12,22 @@ namespace eWebBanHang.Controllers
 {
     public class SanphamsController : Controller
     {
-        private ShopBanHangEntities db = new ShopBanHangEntities();
+        private Entities db = new Entities();
 
         // GET: Sanphams
+        public ActionResult Index()
+        {
+            var sanphams = db.Sanphams.Include(s => s.Hangsanxuat);
+            return View(sanphams.ToList());
+        }
         public ActionResult dtiphonepartial()
         {
-            var ip = db.Sanphams.Where(n => n.Mahang == 2).Take(4).ToList();
+            var ip = db.Sanphams.Where(n => n.Mahang == 1).Take(4).ToList();
             return PartialView(ip);
         }
         public ActionResult dtsamsungpartial()
         {
-            var ss = db.Sanphams.Where(n => n.Mahang == 1).Take(4).ToList();
+            var ss = db.Sanphams.Where(n => n.Mahang == 2).Take(4).ToList();
             return PartialView(ss);
         }
         public ActionResult dtxiaomipartial()
@@ -45,5 +50,7 @@ namespace eWebBanHang.Controllers
             }
             return View(chitiet);
         }
+
     }
 }
+

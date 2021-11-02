@@ -9,7 +9,7 @@ namespace eWebBanHang.Controllers
 {
     public class UserController : Controller
     {
-        private ShopBanHangEntities db = new ShopBanHangEntities();
+        private Entities db = new Entities();
         // GET: User
         public ActionResult Dangky()
         {

@@ -9,7 +9,7 @@ namespace eWebBanHang.Controllers
 {
     public class DanhMucController : Controller
     {
-        private ShopBanHangEntities db = new ShopBanHangEntities();
+        private Entities db = new Entities();
         // GET: DanhMuc
         public ActionResult DanhmucPartial()
         {
