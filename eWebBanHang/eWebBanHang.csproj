@@ -402,6 +402,10 @@
     <Content Include="Views\Sanphams\xemchitiet.cshtml" />
     <Content Include="Views\DanhMuc\DanhmucPartial.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Sanpham\dtiphonePartial.cshtml" />
+    <Content Include="Views\Sanpham\dtsamsungpartial.cshtml" />
+    <Content Include="Views\Sanpham\dtxiaomipartial.cshtml" />
+    <Content Include="Views\Sanpham\xemchitiet.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
