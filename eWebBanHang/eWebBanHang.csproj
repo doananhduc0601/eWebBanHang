@@ -272,11 +272,13 @@
     <Content Include="Views\Sanphams\Details.cshtml" />
     <Content Include="Views\Sanphams\Edit.cshtml" />
     <Content Include="Views\Sanphams\xemchitiet.cshtml" />
+    <Content Include="Views\GioHang\GioHang.cshtml" />
+    <Content Include="Views\GioHang\GioHangPartial.cshtml" />
+    <Content Include="Views\GioHang\SuaGioHang.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\DanhMuc\" />
-    <Folder Include="Views\GioHang\" />
     <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>
