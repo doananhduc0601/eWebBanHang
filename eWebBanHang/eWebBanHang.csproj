@@ -386,10 +386,7 @@
     <Content Include="Views\Shared\_Layouthome.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Donhangs\Create.cshtml" />
-    <Content Include="Views\Donhangs\Delete.cshtml" />
     <Content Include="Views\Donhangs\Details.cshtml" />
-    <Content Include="Views\Donhangs\Edit.cshtml" />
     <Content Include="Views\Donhangs\Index.cshtml" />
     <Content Include="Views\Hangsanxuats\Create.cshtml" />
     <Content Include="Views\Hangsanxuats\Delete.cshtml" />
@@ -402,10 +399,12 @@
     <Content Include="Views\User\Dangky.cshtml" />
     <Content Include="Views\User\Dangnhap.cshtml" />
     <Content Include="Views\User\DangXuat.cshtml" />
+    <Content Include="Views\GioHang\GioHang.cshtml" />
+    <Content Include="Views\GioHang\GioHangPartial.cshtml" />
+    <Content Include="Views\GioHang\SuaGioHang.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\GioHang\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
