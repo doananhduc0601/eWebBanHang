@@ -1,24 +1,24 @@
 ﻿@{
     ViewBag.Title = "eWebBanHang";
 
-    Layout = "~/Views/Shared/_Layouthome.cshtml";
+    
 
 }
 
 
 <br />
 <div class="row">
-    <div class="col-md-8">
-        <img src="~/HinhAnhSP/Banner.jpg" class="img-responsive" alt="" />
+    <div class="col-md-8 ">
+        <img src="~/images/Banner.jpg" class="img-responsive  " alt="" />
         @*@Html.Action("SlidePartial", "Home")*@
     </div>
     <div class="col-md-4">
-        <img src="~/HinhAnhSP/qc3.gif" class="img-responsive" alt="" />
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        <img src="~/images/qc3.gif" class="img-responsive" alt="" style="height:210px"/>
+        <img src="~/images/qc3.gif" class="img-responsive" alt="" style="height:210px"/>
     </div>
 </div>
 <div>
-    <img class="img-responsive" src="~/HinhAnhSP/ban1.jpg" />
+    <img class="img-responsive " src="~/images/ban1.jpg" />
 </div>
 <br />
 <div class="spnoibat">
@@ -26,36 +26,28 @@
 
         <h3> SẢN PHẨM NỔI BẬT</h3>
         <div class="col-md-4">
-            <img src="~/HinhAnhSP/spnb1.png" class="img-responsive" alt="" />
+            <img src="~/images/spnb1.png" class="img-responsive" alt="" />
         </div>
         <div class="col-md-4">
-            <img src="~/HinhAnhSP/spnb2.png" class="img-responsive" alt="" />
+            <img src="~/images/spnb2.png" class="img-responsive" alt="" />
         </div>
         <div class="col-md-4">
-            <img src="~/HinhAnhSP/spnb3.png" class="img-responsive" alt="" />
+            <img src="~/images/spnb3.png" class="img-responsive" alt="" />
         </div>
     </div>
 </div>
 <div class="danhmuc">
-    @*@Html.Action("DanhmucPartial", "Danhmuc")*@
+    @Html.Action("DanhmucPartial", "Danhmuc")
 </div>
-@*<div class="dt">
-        @Html.Action("dtiphonePartial", "Sanpham")
-    </div>*@
-@*<div class="dt">
-        @Html.Action("dtsamsungpartial", "Sanpham")
+<div class="dt">
+        @Html.Action("dtiphonePartial", "Sanphams")
+    </div>
+<div class="dt">
+        @Html.Action("dtsamsungpartial", "Sanphams")
     </div>
     <div class="dt">
-        @Html.Action("dtxiaomipartial", "Sanpham")
-    </div>*@
+        @Html.Action("dtxiaomipartial", "Sanphams")
+    </div>
 
-<div class="row">
-    <h2> Tin tức sản phẩm</h2>
-    <div class="col-md-8">
-        Video
-    </div>
-    <div class="col-md-4">
-        Tin tức
-    </div>
-</div>
+
 

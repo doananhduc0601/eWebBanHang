@@ -159,6 +159,7 @@
     <Compile Include="Models\Hangsanxuat.cs">
       <DependentUpon>ShopBanHangDBcontext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\Nguoidung.cs">
       <DependentUpon>ShopBanHangDBcontext.tt</DependentUpon>
     </Compile>
@@ -396,17 +397,21 @@
     <Content Include="Views\Hangsanxuats\Edit.cshtml" />
     <Content Include="Views\Hangsanxuats\Index.cshtml" />
     <Content Include="Views\Sanphams\dtiphonePartial.cshtml" />
-    <Content Include="Views\Sanphams\Delete.cshtml" />
-    <Content Include="Views\Sanphams\Details.cshtml" />
-    <Content Include="Views\Sanphams\Edit.cshtml" />
-    <Content Include="Views\Sanphams\xemchitiet.cshtml" />
     <Content Include="Views\DanhMuc\DanhmucPartial.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Sanphams\dtsamsungpartial.cshtml" />
+    <Content Include="Views\Sanphams\dtxiaomipartial.cshtml" />
+    <Content Include="Views\Sanphams\xemchitiet.cshtml" />
+    <Content Include="Views\Home\SlidePartial.cshtml" />
+    <Content Include="Views\GioHang\GioHang.cshtml" />
+    <Content Include="Views\GioHang\GioHangPartial.cshtml" />
+    <Content Include="Views\GioHang\SuaGioHang.cshtml" />
+    <Content Include="Views\User\Dangky.cshtml" />
+    <Content Include="Views\User\Dangnhap.cshtml" />
+    <Content Include="Views\User\DangXuat.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\GioHang\" />
-    <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

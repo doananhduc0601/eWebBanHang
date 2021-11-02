@@ -26,5 +26,10 @@ namespace eWebBanHang.Controllers
 
             return View();
         }
+        public ActionResult SlidePartial()
+        {
+            return PartialView();
+
+        }
     }
 }
