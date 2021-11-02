@@ -186,7 +186,7 @@ namespace eWebBanHang.Controllers
                 ctDH.Masp = item.iMasp;
                 ctDH.Soluong = item.iSoLuong;
                 ctDH.Dongia = (decimal)item.dDonGia;
-                //ctDH.Thanhtien = (decimal)thanhtien;
+                ctDH.Thanhtien = (decimal)thanhtien;
                 db.Chitietdonhangs.Add(ctDH);
             }
             db.SaveChanges();
