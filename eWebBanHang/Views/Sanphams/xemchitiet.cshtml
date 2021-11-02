@@ -4,7 +4,7 @@
 
 @{
     ViewBag.Title = "xemchitiet";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_Layouthome.cshtml";
 }
 <br />
 
@@ -13,7 +13,7 @@
         <h2>CHI TIẾT SẢN PHẨM</h2>
         <img src="@Url.Content("~/HinhanhSP/" +@Model.Anhbia)" />
         <br />
-        <h3> @Model.Tensp</h3>
+        <h3> @Model.TenSp</h3>
         <h3 style="color:red">Giá: @Model.Giatien</h3>
         <br />
         @Model.Mota
