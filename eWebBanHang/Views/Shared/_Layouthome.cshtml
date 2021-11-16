@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
     <link rel=" stylesheet" href="~/Content/Style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
     <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
     <script src="~/Scripts/jquery-3.4.1.js"></script>
@@ -18,14 +21,14 @@
     <style type="text/css">
         body {
             background-color: #F0F0F0;
-            font-family:Arial;
-            font-size:12px;
+            font-family: Arial;
+            font-size: 12px;
         }
 
         .navbar-inverse {
             background-color: #39B54A;
             border-color: #39B54A;
-            margin-bottom:10px;
+            margin-bottom: 10px;
         }
 
         .top_header {
@@ -46,21 +49,22 @@
 
         .navbar-inverse .navbar-brand {
             color: white;
-            margin:10px;
+            margin: 10px;
         }
 
         .navbar-inverse .navbar-nav > li > a {
             color: white;
             font-size: large;
-            margin:10px;
-        }
-        .form-control{
-            margin:10px;
+            margin: 10px;
         }
 
-            .navbar-inverse .navbar-nav > li > a:hover {
-                color: black;
-            }
+        .form-control {
+            margin: 10px;
+        }
+
+        .navbar-inverse .navbar-nav > li > a:hover {
+            color: black;
+        }
 
         .navbar-brand {
             color: cadetblue;
@@ -77,14 +81,20 @@
         .giohang {
             color: white;
         }
-        .body-content{
-            margin-top:30px;
+
+        .body-content {
+            margin-top: 30px;
         }
-        .img-responsive{
-            margin:10px;
+
+        .img-responsive {
+            margin: 10px;
         }
-        .dt{
-            margin:10px;
+
+        .dt {
+            margin: 10px;
+        }
+        .carousel-inner .item img {
+            height: 549px;
         }
     </style>
 
@@ -155,9 +165,10 @@
 
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#" title="dienthoai">
+                        <a href="@Url.Action("dtiphonePartial", "Sanphams")" title="dienthoai">
                             @*<span><i class=" glyphicon-music "></i></span>*@
-                            <span>Laptop</span>
+                            <span> Laptop</span>
+                           
 
                         </a>
                         @*<span><i class=" glyphicon-music "></i> </span>

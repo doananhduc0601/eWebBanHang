@@ -234,6 +234,10 @@
     <Content Include="Content\images\add.png" />
     <Content Include="Content\images\ban1.jpg" />
     <Content Include="Content\PagedList.css" />
+    <Content Include="images\banner1.jpg" />
+    <Content Include="images\banner2.png" />
+    <Content Include="images\banner3.jpg" />
+    <Content Include="images\giphy.gif" />
     <Content Include="images\ocung.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
