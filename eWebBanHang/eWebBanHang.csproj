@@ -135,6 +135,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\ChitietdonhangsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DonhangsController.cs" />
     <Compile Include="Areas\Admin\Controllers\Hangsanxuats1Controller.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\Nguoidungs1Controller.cs" />
@@ -150,42 +152,42 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Chitietdonhang.cs">
-      <DependentUpon>ShopBanHangDBcontext.tt</DependentUpon>
+      <DependentUpon>ShopbanhangDbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Donhang.cs">
-      <DependentUpon>ShopBanHangDBcontext.tt</DependentUpon>
+      <DependentUpon>ShopbanhangDbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\GioHang.cs" />
     <Compile Include="Models\Hangsanxuat.cs">
-      <DependentUpon>ShopBanHangDBcontext.tt</DependentUpon>
+      <DependentUpon>ShopbanhangDbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\Nguoidung.cs">
-      <DependentUpon>ShopBanHangDBcontext.tt</DependentUpon>
+      <DependentUpon>ShopbanhangDbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Role.cs">
-      <DependentUpon>ShopBanHangDBcontext.tt</DependentUpon>
+      <DependentUpon>ShopbanhangDbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Sanpham.cs">
-      <DependentUpon>ShopBanHangDBcontext.tt</DependentUpon>
+      <DependentUpon>ShopbanhangDbContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ShopBanHangDBcontext.Context.cs">
+    <Compile Include="Models\ShopbanhangDbContext.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ShopBanHangDBcontext.Context.tt</DependentUpon>
+      <DependentUpon>ShopbanhangDbContext.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ShopBanHangDBcontext.cs">
+    <Compile Include="Models\ShopbanhangDbContext.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ShopBanHangDBcontext.tt</DependentUpon>
+      <DependentUpon>ShopbanhangDbContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ShopBanHangDBcontext.Designer.cs">
+    <Compile Include="Models\ShopbanhangDbContext.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ShopBanHangDBcontext.edmx</DependentUpon>
+      <DependentUpon>ShopbanhangDbContext.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\sysdiagram.cs">
-      <DependentUpon>ShopBanHangDBcontext.tt</DependentUpon>
+      <DependentUpon>ShopbanhangDbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -273,15 +275,15 @@
     <Content Include="images\ss4.jpg" />
     <Content Include="images\ss5.jpg" />
     <Content Include="images\tvsony.jpg" />
-    <Content Include="Models\ShopBanHangDBcontext.Context.tt">
+    <Content Include="Models\ShopbanhangDbContext.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ShopBanHangDBcontext.edmx</DependentUpon>
-      <LastGenOutput>ShopBanHangDBcontext.Context.cs</LastGenOutput>
+      <DependentUpon>ShopbanhangDbContext.edmx</DependentUpon>
+      <LastGenOutput>ShopbanhangDbContext.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\ShopBanHangDBcontext.tt">
+    <Content Include="Models\ShopbanhangDbContext.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ShopBanHangDBcontext.edmx</DependentUpon>
-      <LastGenOutput>ShopBanHangDBcontext.cs</LastGenOutput>
+      <DependentUpon>ShopbanhangDbContext.edmx</DependentUpon>
+      <LastGenOutput>ShopbanhangDbContext.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -362,12 +364,22 @@
     <Content Include="Areas\Admin\Views\Sanphams\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Sanphams\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Sanphams\Index.cshtml" />
-    <EntityDeploy Include="Models\ShopBanHangDBcontext.edmx">
+    <Content Include="Areas\Admin\Views\Donhangs\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Donhangs\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Donhangs\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Donhangs\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Donhangs\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Chitietdonhangs\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Chitietdonhangs\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Chitietdonhangs\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Chitietdonhangs\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Chitietdonhangs\Details.cshtml" />
+    <EntityDeploy Include="Models\ShopbanhangDbContext.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ShopBanHangDBcontext.Designer.cs</LastGenOutput>
+      <LastGenOutput>ShopbanhangDbContext.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\ShopBanHangDBcontext.edmx.diagram">
-      <DependentUpon>ShopBanHangDBcontext.edmx</DependentUpon>
+    <Content Include="Models\ShopbanhangDbContext.edmx.diagram">
+      <DependentUpon>ShopbanhangDbContext.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -410,6 +422,8 @@
     <Content Include="Views\GioHang\GioHang.cshtml" />
     <Content Include="Views\GioHang\GioHangPartial.cshtml" />
     <Content Include="Views\GioHang\SuaGioHang.cshtml" />
+    <Content Include="Views\Sanphams\dtsamsungpartial.cshtml" />
+    <Content Include="Views\Sanphams\dtxiaomipartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

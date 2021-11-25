@@ -1,8 +1,7 @@
 ﻿@model IEnumerable<eWebBanHang.Models.Chitietdonhang>
-
 @{
     ViewBag.Title = "Details";
-    Layout = "~/Views/Shared/_Layouthome.cshtml";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Chi tiết đơn hàng</h2>
@@ -25,12 +24,14 @@
 
     @foreach (var item in Model)
     {
+
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Sanpham.Tensp)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Soluong)
+
             </td>
             <td>
                 @String.Format("{0:0,0}", item.Dongia) VNĐ
@@ -43,13 +44,13 @@
     }
     <tr>
         <th>
-
+         
         </th>
         <th>
-            Tổng Số lượng
+           Tổng Số lượng
         </th>
         <th>
-
+          
         </th>
         <th>
             Tổng Tiền
@@ -70,5 +71,6 @@
             VNĐ
         </td>
     </tr>
+    }
 
 </table>

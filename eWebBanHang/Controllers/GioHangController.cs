@@ -8,7 +8,7 @@ namespace eWebBanHang.Controllers
 {
     public class GioHangController : Controller
     {
-        private Entities db = new Entities();
+        private ShopBanHangEntities db = new ShopBanHangEntities();
         // GET: GioHang
         //Lấy giỏ hàng 
         public List<GioHang> LayGioHang()
@@ -105,6 +105,8 @@ namespace eWebBanHang.Controllers
                 return RedirectToAction("Index", "Home");
             }
             List<GioHang> lstGioHang = LayGioHang();
+            ViewBag.TongSoLuong = TongSoLuong();
+            ViewBag.TongTien = TongTien();
             return View(lstGioHang);
         }
         //Tính tổng số lượng và tổng tiền
@@ -186,7 +188,7 @@ namespace eWebBanHang.Controllers
                 ctDH.Masp = item.iMasp;
                 ctDH.Soluong = item.iSoLuong;
                 ctDH.Dongia = (decimal)item.dDonGia;
-                ctDH.Thanhtien = (decimal)thanhtien;
+                ctDH.Thanhtien = (float)thanhtien;
                 db.Chitietdonhangs.Add(ctDH);
             }
             db.SaveChanges();
