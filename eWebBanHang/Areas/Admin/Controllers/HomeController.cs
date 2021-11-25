@@ -14,7 +14,7 @@ namespace eWebBanHang.Areas.Admin.Controllers
 {
     public class HomeController : Controller
     {
-        private Entities db = new Entities();
+        private ShopBanHangEntities db = new ShopBanHangEntities();
 
         // GET: Admin/Home
         public ActionResult Index(int? page)

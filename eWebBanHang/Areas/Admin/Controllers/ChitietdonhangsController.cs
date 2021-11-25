@@ -10,108 +10,117 @@ using eWebBanHang.Models;
 
 namespace eWebBanHang.Areas.Admin.Controllers
 {
-    public class RolesController : Controller
+    public class ChitietdonhangsController : Controller
     {
         private ShopBanHangEntities db = new ShopBanHangEntities();
 
-        // GET: Admin/Roles
+        // GET: Admin/Chitietdonhangs
         public ActionResult Index()
         {
-            return View(db.Roles.ToList());
+       
+            var chitietdonhangs = db.Chitietdonhangs.Include(c => c.Donhang).Include(c => c.Sanpham);
+            return View(chitietdonhangs.ToList());
         }
 
-        // GET: Admin/Roles/Details/5
+        // GET: Admin/Chitietdonhangs/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Role role = db.Roles.Find(id);
-            if (role == null)
+            Chitietdonhang chitietdonhang = db.Chitietdonhangs.Find(id);
+            if (chitietdonhang == null)
             {
                 return HttpNotFound();
             }
-            return View(role);
+            return View(chitietdonhang);
         }
 
-        // GET: Admin/Roles/Create
+        // GET: Admin/Chitietdonhangs/Create
         public ActionResult Create()
         {
+            ViewBag.Madon = new SelectList(db.Donhangs, "Madon", "Madon");
+            ViewBag.Masp = new SelectList(db.Sanphams, "Masp", "Tensp");
             return View();
         }
 
-        // POST: Admin/Roles/Create
+        // POST: Admin/Chitietdonhangs/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IDQuyen,TenQuyen")] Role role)
+        public ActionResult Create([Bind(Include = "Madon,Masp,Soluong,Dongia")] Chitietdonhang chitietdonhang)
         {
             if (ModelState.IsValid)
             {
-                db.Roles.Add(role);
+                db.Chitietdonhangs.Add(chitietdonhang);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(role);
+            ViewBag.Madon = new SelectList(db.Donhangs, "Madon", "Madon", chitietdonhang.Madon);
+            ViewBag.Masp = new SelectList(db.Sanphams, "Masp", "Tensp", chitietdonhang.Masp);
+            return View(chitietdonhang);
         }
 
-        // GET: Admin/Roles/Edit/5
+        // GET: Admin/Chitietdonhangs/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Role role = db.Roles.Find(id);
-            if (role == null)
+            Chitietdonhang chitietdonhang = db.Chitietdonhangs.Find(id);
+            if (chitietdonhang == null)
             {
                 return HttpNotFound();
             }
-            return View(role);
+            ViewBag.Madon = new SelectList(db.Donhangs, "Madon", "Madon", chitietdonhang.Madon);
+            ViewBag.Masp = new SelectList(db.Sanphams, "Masp", "Tensp", chitietdonhang.Masp);
+            return View(chitietdonhang);
         }
 
-        // POST: Admin/Roles/Edit/5
+        // POST: Admin/Chitietdonhangs/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IDQuyen,TenQuyen")] Role role)
+        public ActionResult Edit([Bind(Include = "Madon,Masp,Soluong,Dongia")] Chitietdonhang chitietdonhang)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(role).State = EntityState.Modified;
+                db.Entry(chitietdonhang).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.IDQuyen = new SelectList(db.Roles, "IDQuyen", "TenQuyen", role.IDQuyen);
-            return View(role);
+            ViewBag.Madon = new SelectList(db.Donhangs, "Madon", "Madon", chitietdonhang.Madon);
+            ViewBag.Masp = new SelectList(db.Sanphams, "Masp", "Tensp", chitietdonhang.Masp);
+            return View(chitietdonhang);
         }
 
-        // GET: Admin/Roles/Delete/5
+        // GET: Admin/Chitietdonhangs/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Role role = db.Roles.Find(id);
-            if (role == null)
+            Chitietdonhang chitietdonhang = db.Chitietdonhangs.Find(id);
+            if (chitietdonhang == null)
             {
                 return HttpNotFound();
             }
-            return View(role);
+            return View(chitietdonhang);
         }
 
-        // POST: Admin/Roles/Delete/5
+        // POST: Admin/Chitietdonhangs/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Role role = db.Roles.Find(id);
-            db.Roles.Remove(role);
+            Chitietdonhang chitietdonhang = db.Chitietdonhangs.Find(id);
+            db.Chitietdonhangs.Remove(chitietdonhang);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

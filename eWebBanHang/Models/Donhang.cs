@@ -28,5 +28,11 @@ namespace eWebBanHang.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Chitietdonhang> Chitietdonhangs { get; set; }
         public virtual Nguoidung Nguoidung { get; set; }
+        public int iSoLuong { get; set; }
+        public double dDonGia { get; set; }
+        public double ThanhTien
+        {
+            get { return iSoLuong * dDonGia; }
+        }
     }
 }

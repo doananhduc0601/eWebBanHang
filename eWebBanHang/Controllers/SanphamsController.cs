@@ -12,7 +12,7 @@ namespace eWebBanHang.Controllers
 {
     public class SanphamsController : Controller
     {
-        private Entities db = new Entities();
+        private ShopBanHangEntities db = new ShopBanHangEntities();
 
         // GET: Sanphams
         public ActionResult Index()
