@@ -1,32 +1,40 @@
 ﻿
+@{
+    Layout = "~/Views/Shared/_Layouthome.cshtml";
+  
+}
 
 
 <div class="row">
-    <div class=" bg-danger"><h3 style="padding-left:20px"> Điện thoại </h3></div>
-    @foreach (var item in Model)
-    {
-        <div class="col-md-3 col-sm-6">
-            <div class="card mb-30">
-                <a class="card-img-tiles" href="@Url.Action("xemchitiet", new {@Masp=item.Masp })" data-abc="true">
-                    <div class="inner">
-                        <div class="main-img"><img src=@Url.Content(item.Anhbia) class="img-responsive" alt="" width="200" height="200" /></div>
+    <div class=" bg-danger"><h3 style="padding-left:20px"> Laptop </h3></div>
+    <div class="container" style="background:white">
+        @foreach (var item in Model)
+        {
+
+            <div class="col-md-2 col-lg-2 col-sm-2 col-xs-3 col-xl-2" style="background: #f7f3f2; border: 0px solid #ff6a00; margin: 10px; width: 200px !important; height: 400px; padding: 20px 5px 5px 5px ; margin: 10px; border-radius: 5px ">
+                <div class="card mb-30">
+                    <a class="card-img-tiles" href="@Url.Action("xemchitiet", new {@Masp=item.Masp })" data-abc="true">
+                        <div class="inner" style="margin: 0; text-align: center !important">
+                            <div class="main-img"><img src=@Url.Content(item.Anhbia) class="img-responsive" alt="" /></div>
+                        </div>
+                    </a>
+                    <div class="card-body text-center">
+                        <h4 class="card-title">@item.Tensp</h4>
+                        <p class="text-muted">Giá: @item.Giatien</p>
+
+                        @using (Html.BeginForm("ThemGioHang", "GioHang", new { @iMasp = item.Masp, @strURL = Request.Url.ToString() }))
+                        {
+                            <input class="btn btn-primary"  type="submit" value="Mua hàng" id="bgnGioHang" />
+
+                        }
+                        <a class="btn btn-outline-primary btn-sm"  href="@Url.Action("xemchitiet", new {@Masp=item.Masp })" data-abc="true">View Products</a>
+
                     </div>
-                </a>
-                <div class="card-body text-center">
-                    <h4 class="card-title">@item.Tensp</h4>
-                    <p class="text-muted">Giá: @item.Giatien</p>
-
-                    @using (Html.BeginForm("ThemGioHang", "GioHang", new { @iMasp = item.Masp, @strURL = Request.Url.ToString() }))
-                    {
-                        <input class="btn btn-primary" type="submit" value="Mua hàng" id="bgnGioHang" />
-
-                    }
-                    <a class="btn btn-outline-primary btn-sm" href="@Url.Action("xemchitiet", new {@Masp=item.Masp })" data-abc="true">View Products</a>
-
                 </div>
             </div>
-        </div>
-    }
+
+        }
+    </div>
     @*<div class=" bg-danger"><h3 style="padding-left:20px"> LapTop </h3></div>
         @foreach (var item in Model)
         {
@@ -80,26 +88,29 @@
 
     .card-img-tiles > .inner {
         display: block;
-        width: 80%;
+        width: 100%;
         margin-left: 10%;
     }
 
     .card-img-tiles .main-img,
     .card-img-tiles .thumblist {
         display: table-cell;
-        width: 65%;
-        padding: 15px;
-        vertical-align: middle
+        width: 100%;
+        padding: 0px;
+        vertical-align: middle;
+        display: inline-block;
     }
 
         .card-img-tiles .main-img > img:last-child,
         .card-img-tiles .thumblist > img:last-child {
-            margin-bottom: 0
+            margin-bottom: 0;
+            width: 100%;
         }
 
         .card-img-tiles .main-img > img,
         .card-img-tiles .thumblist > img {
             display: block;
+            height: 200px;
             width: 100%;
             margin-bottom: 6px
         }

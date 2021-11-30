@@ -411,7 +411,6 @@
     <Content Include="Views\Hangsanxuats\Details.cshtml" />
     <Content Include="Views\Hangsanxuats\Edit.cshtml" />
     <Content Include="Views\Hangsanxuats\Index.cshtml" />
-    <Content Include="Views\Sanphams\dtiphonePartial.cshtml" />
     <Content Include="Views\DanhMuc\DanhmucPartial.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\User\Dangky.cshtml" />
@@ -420,8 +419,10 @@
     <Content Include="Views\GioHang\GioHang.cshtml" />
     <Content Include="Views\GioHang\GioHangPartial.cshtml" />
     <Content Include="Views\GioHang\SuaGioHang.cshtml" />
-    <Content Include="Views\Sanphams\dtsamsungpartial.cshtml" />
-    <Content Include="Views\Sanphams\dtxiaomipartial.cshtml" />
+    <Content Include="Views\Sanphams\smartphonepartial.cshtml" />
+    <Content Include="Views\Sanphams\laptoppartial.cshtml" />
+    <Content Include="Views\Sanphams\tivipartial.cshtml" />
+    <Content Include="Views\Sanphams\sanphamshowindex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
