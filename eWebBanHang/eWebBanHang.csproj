@@ -422,6 +422,7 @@
     <Content Include="Views\GioHang\SuaGioHang.cshtml" />
     <Content Include="Views\Sanphams\dtsamsungpartial.cshtml" />
     <Content Include="Views\Sanphams\dtxiaomipartial.cshtml" />
+    <Content Include="Views\Sanphams\xemchitiet.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
