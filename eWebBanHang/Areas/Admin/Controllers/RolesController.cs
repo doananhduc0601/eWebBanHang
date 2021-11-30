@@ -12,7 +12,7 @@ namespace eWebBanHang.Areas.Admin.Controllers
 {
     public class RolesController : Controller
     {
-        private Entities db = new Entities();
+        private ShopBanHangEntities db = new ShopBanHangEntities();
 
         // GET: Admin/Roles
         public ActionResult Index()

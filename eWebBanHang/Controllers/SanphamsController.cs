@@ -12,7 +12,7 @@ namespace eWebBanHang.Controllers
 {
     public class SanphamsController : Controller
     {
-        private Entities db = new Entities();
+        private ShopBanHangEntities db = new ShopBanHangEntities();
 
         // GET: Sanphams
         public ActionResult Index()
@@ -20,21 +20,30 @@ namespace eWebBanHang.Controllers
             var sanphams = db.Sanphams.Include(s => s.Hangsanxuat);
             return View(sanphams.ToList());
         }
-        public ActionResult dtiphonepartial()
+        public ActionResult smartphonepartial()
         {
             var ip = db.Sanphams.Where(n => n.Mahang == 1).Take(4).ToList();
             return PartialView(ip);
         }
-        public ActionResult dtsamsungpartial()
+        public ActionResult laptoppartial()
         {
             var ss = db.Sanphams.Where(n => n.Mahang == 2).Take(4).ToList();
             return PartialView(ss);
         }
-        public ActionResult dtxiaomipartial()
+        public ActionResult tivipartial()
         {
             var mi = db.Sanphams.Where(n => n.Mahang == 3).Take(4).ToList();
             return PartialView(mi);
         }
+        public ActionResult sanphamshowindex()
+        {
+            var sp = db.Sanphams.ToList();
+ 
+          
+
+            return PartialView(sp);
+        }
+
         //public ActionResult dttheohang()
         //{
         //    var mi = db.Sanphams.Where(n => n.Mahang == 5).Take(4).ToList();

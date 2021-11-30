@@ -13,6 +13,7 @@ namespace eWebBanHang.Models
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Web;
+
     public partial class Sanpham
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,7 +22,7 @@ namespace eWebBanHang.Models
             this.Chitietdonhangs = new HashSet<Chitietdonhang>();
             Anhbia = "~/Content/images/add.png";
         }
-    
+
         public int Masp { get; set; }
         public string Tensp { get; set; }
         public Nullable<decimal> Giatien { get; set; }
@@ -30,11 +31,14 @@ namespace eWebBanHang.Models
         public Nullable<bool> Sanphammoi { get; set; }
         public string Anhbia { get; set; }
         public Nullable<int> Mahang { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Chitietdonhang> Chitietdonhangs { get; set; }
         public virtual Hangsanxuat Hangsanxuat { get; set; }
         [NotMapped]
-        public HttpPostedFileBase ImageUpload { get; set; }
+        public HttpPostedFileBase ImageUpload
+        {
+            get; set;
+        }
     }
 }

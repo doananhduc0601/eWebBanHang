@@ -1,0 +1,76 @@
+﻿@model IEnumerable<eWebBanHang.Models.Chitietdonhang>
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Chi tiết đơn hàng</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Sản phẩm
+        </th>
+        <th>
+            Số lượng
+        </th>
+        <th>
+            Đơn giá / 1 sản phẩm
+        </th>
+        <th>
+            Thành tiền
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sanpham.Tensp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Soluong)
+
+            </td>
+            <td>
+                @String.Format("{0:0,0}", item.Dongia) VNĐ
+            </td>
+            <td>
+                @String.Format("{0:0,0}", item.Thanhtien)
+                VNĐ
+            </td>
+        </tr>
+    }
+    <tr>
+        <th>
+         
+        </th>
+        <th>
+           Tổng Số lượng
+        </th>
+        <th>
+          
+        </th>
+        <th>
+            Tổng Tiền
+        </th>
+    </tr>
+    <tr>
+        <td>
+        </td>
+        <td>
+
+            @Model.Sum(i => i.Soluong)
+        </td>
+        <td>
+        </td>
+        <td>
+
+            @String.Format("{0:0,0}", @Model.Sum(i => i.Thanhtien))
+            VNĐ
+        </td>
+    </tr>
+    
+
+</table>

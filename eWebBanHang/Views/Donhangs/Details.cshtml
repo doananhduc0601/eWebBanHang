@@ -33,12 +33,42 @@
                 @Html.DisplayFor(modelItem => item.Soluong)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Dongia)
+                @String.Format("{0:0,0}", item.Dongia) VNĐ
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Thanhtien)
+                @String.Format("{0:0,0}", item.Thanhtien)
+                VNĐ
             </td>
         </tr>
     }
+    <tr>
+        <th>
+
+        </th>
+        <th>
+            Tổng Số lượng
+        </th>
+        <th>
+
+        </th>
+        <th>
+            Tổng Tiền
+        </th>
+    </tr>
+    <tr>
+        <td>
+        </td>
+        <td>
+
+            @Model.Sum(i => i.Soluong)
+        </td>
+        <td>
+        </td>
+        <td>
+
+            @String.Format("{0:0,0}", @Model.Sum(i => i.Thanhtien))
+            VNĐ
+        </td>
+    </tr>
 
 </table>

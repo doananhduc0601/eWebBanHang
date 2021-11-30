@@ -14,12 +14,13 @@
           <Property Name="Masp" Type="int" Nullable="false" />
           <Property Name="Soluong" Type="int" />
           <Property Name="Dongia" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Thanhtien" Type="float" />
         </EntityType>
         <EntityType Name="Donhang">
           <Key>
             <PropertyRef Name="Madon" />
           </Key>
-          <Property Name="Madon" Type="int" Nullable="false" />
+          <Property Name="Madon" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Ngaydat" Type="datetime" />
           <Property Name="Tinhtrang" Type="int" />
           <Property Name="MaNguoidung" Type="int" />
@@ -176,6 +177,7 @@
           <Property Name="Masp" Type="Int32" Nullable="false" />
           <Property Name="Soluong" Type="Int32" />
           <Property Name="Dongia" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Thanhtien" Type="Double" />
           <NavigationProperty Name="Donhang" Relationship="Self.FK_Chitietdonhang_Donhang" FromRole="Chitietdonhang" ToRole="Donhang" />
           <NavigationProperty Name="Sanpham" Relationship="Self.FK_Chitietdonhang_Sanpham" FromRole="Chitietdonhang" ToRole="Sanpham" />
         </EntityType>
@@ -183,7 +185,7 @@
           <Key>
             <PropertyRef Name="Madon" />
           </Key>
-          <Property Name="Madon" Type="Int32" Nullable="false" />
+          <Property Name="Madon" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Ngaydat" Type="DateTime" Precision="3" />
           <Property Name="Tinhtrang" Type="Int32" />
           <Property Name="MaNguoidung" Type="Int32" />
@@ -305,7 +307,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="ShopBanHangEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Chitietdonhangs" EntityType="Self.Chitietdonhang" />
           <EntitySet Name="Donhangs" EntityType="Self.Donhang" />
           <EntitySet Name="Hangsanxuats" EntityType="Self.Hangsanxuat" />
@@ -339,7 +341,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ShopBanHangModelStoreContainer" CdmEntityContainer="Entities">
+        <EntityContainerMapping StorageEntityContainer="ShopBanHangModelStoreContainer" CdmEntityContainer="ShopBanHangEntities">
           <EntitySetMapping Name="Chitietdonhangs">
             <EntityTypeMapping TypeName="ShopBanHangModel.Chitietdonhang">
               <MappingFragment StoreEntitySet="Chitietdonhang">
@@ -347,6 +349,7 @@
                 <ScalarProperty Name="Masp" ColumnName="Masp" />
                 <ScalarProperty Name="Soluong" ColumnName="Soluong" />
                 <ScalarProperty Name="Dongia" ColumnName="Dongia" />
+                <ScalarProperty Name="Thanhtien" ColumnName="Thanhtien" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

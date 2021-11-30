@@ -51,6 +51,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
       <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
@@ -126,15 +129,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
-      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\ChitietdonhangsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DonhangsController.cs" />
     <Compile Include="Areas\Admin\Controllers\Hangsanxuats1Controller.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\Nguoidungs1Controller.cs" />
@@ -150,42 +150,42 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Chitietdonhang.cs">
-      <DependentUpon>ShopBanHangDBcontext.tt</DependentUpon>
+      <DependentUpon>ShopbanhangDbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Donhang.cs">
-      <DependentUpon>ShopBanHangDBcontext.tt</DependentUpon>
+      <DependentUpon>ShopbanhangDbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\GioHang.cs" />
     <Compile Include="Models\Hangsanxuat.cs">
-      <DependentUpon>ShopBanHangDBcontext.tt</DependentUpon>
+      <DependentUpon>ShopbanhangDbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\Nguoidung.cs">
-      <DependentUpon>ShopBanHangDBcontext.tt</DependentUpon>
+      <DependentUpon>ShopbanhangDbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Role.cs">
-      <DependentUpon>ShopBanHangDBcontext.tt</DependentUpon>
+      <DependentUpon>ShopbanhangDbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Sanpham.cs">
-      <DependentUpon>ShopBanHangDBcontext.tt</DependentUpon>
+      <DependentUpon>ShopbanhangDbContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ShopBanHangDBcontext.Context.cs">
+    <Compile Include="Models\ShopbanhangDbContext.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ShopBanHangDBcontext.Context.tt</DependentUpon>
+      <DependentUpon>ShopbanhangDbContext.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ShopBanHangDBcontext.cs">
+    <Compile Include="Models\ShopbanhangDbContext.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ShopBanHangDBcontext.tt</DependentUpon>
+      <DependentUpon>ShopbanhangDbContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ShopBanHangDBcontext.Designer.cs">
+    <Compile Include="Models\ShopbanhangDbContext.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ShopBanHangDBcontext.edmx</DependentUpon>
+      <DependentUpon>ShopbanhangDbContext.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\sysdiagram.cs">
-      <DependentUpon>ShopBanHangDBcontext.tt</DependentUpon>
+      <DependentUpon>ShopbanhangDbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -234,6 +234,14 @@
     <Content Include="Content\images\add.png" />
     <Content Include="Content\images\ban1.jpg" />
     <Content Include="Content\PagedList.css" />
+    <Content Include="images\banner1.jpg" />
+    <Content Include="images\banner2.png" />
+    <Content Include="images\banner3.jpg" />
+    <Content Include="images\giohangwed.png" />
+    <Content Include="images\giphy.gif" />
+    <Content Include="images\hot_deal.png" />
+    <Content Include="images\iphone13.png" />
+    <Content Include="images\logowebb.jpg" />
     <Content Include="images\ocung.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -265,15 +273,15 @@
     <Content Include="images\ss4.jpg" />
     <Content Include="images\ss5.jpg" />
     <Content Include="images\tvsony.jpg" />
-    <Content Include="Models\ShopBanHangDBcontext.Context.tt">
+    <Content Include="Models\ShopbanhangDbContext.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ShopBanHangDBcontext.edmx</DependentUpon>
-      <LastGenOutput>ShopBanHangDBcontext.Context.cs</LastGenOutput>
+      <DependentUpon>ShopbanhangDbContext.edmx</DependentUpon>
+      <LastGenOutput>ShopbanhangDbContext.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\ShopBanHangDBcontext.tt">
+    <Content Include="Models\ShopbanhangDbContext.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ShopBanHangDBcontext.edmx</DependentUpon>
-      <LastGenOutput>ShopBanHangDBcontext.cs</LastGenOutput>
+      <DependentUpon>ShopbanhangDbContext.edmx</DependentUpon>
+      <LastGenOutput>ShopbanhangDbContext.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -354,12 +362,22 @@
     <Content Include="Areas\Admin\Views\Sanphams\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Sanphams\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Sanphams\Index.cshtml" />
-    <EntityDeploy Include="Models\ShopBanHangDBcontext.edmx">
+    <Content Include="Areas\Admin\Views\Donhangs\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Donhangs\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Donhangs\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Donhangs\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Donhangs\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Chitietdonhangs\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Chitietdonhangs\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Chitietdonhangs\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Chitietdonhangs\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Chitietdonhangs\Details.cshtml" />
+    <EntityDeploy Include="Models\ShopbanhangDbContext.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ShopBanHangDBcontext.Designer.cs</LastGenOutput>
+      <LastGenOutput>ShopbanhangDbContext.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\ShopBanHangDBcontext.edmx.diagram">
-      <DependentUpon>ShopBanHangDBcontext.edmx</DependentUpon>
+    <Content Include="Models\ShopbanhangDbContext.edmx.diagram">
+      <DependentUpon>ShopbanhangDbContext.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -393,7 +411,6 @@
     <Content Include="Views\Hangsanxuats\Details.cshtml" />
     <Content Include="Views\Hangsanxuats\Edit.cshtml" />
     <Content Include="Views\Hangsanxuats\Index.cshtml" />
-    <Content Include="Views\Sanphams\dtiphonePartial.cshtml" />
     <Content Include="Views\DanhMuc\DanhmucPartial.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\User\Dangky.cshtml" />
@@ -402,6 +419,10 @@
     <Content Include="Views\GioHang\GioHang.cshtml" />
     <Content Include="Views\GioHang\GioHangPartial.cshtml" />
     <Content Include="Views\GioHang\SuaGioHang.cshtml" />
+    <Content Include="Views\Sanphams\smartphonepartial.cshtml" />
+    <Content Include="Views\Sanphams\laptoppartial.cshtml" />
+    <Content Include="Views\Sanphams\tivipartial.cshtml" />
+    <Content Include="Views\Sanphams\sanphamshowindex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
