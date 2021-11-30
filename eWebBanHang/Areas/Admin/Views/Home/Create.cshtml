@@ -86,7 +86,7 @@
             @Html.LabelFor(model => model.Anhbia, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Anhbia, new { htmlAttributes = new { @class = "form-control" } })
-                <img src="@Url.Content(Model.Anhbia)" style="height:200px ; width:200px ; margin:10px;" id="previewImage"/>
+              @*  <img src="@Url.Content(Model.Anhbia)" style="height:200px ; width:200px ; margin:10px;" id="previewImage"/>*@
                 <input type="file" name="ImageUpload" onchange="ShowImagePreview(this, document.getElementById('previewImage'))"/>
 
                 @Html.ValidationMessageFor(model => model.Anhbia, "", new { @class = "text-danger" })
