@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -19,11 +20,15 @@
         body {
             background-color: #F8E0F7;
             font-family: Arial, Helvetica, sans-serif;
+            width: 100%;
+            height: 100%;
+            padding-bottom: 0px !important;
         }
 
         .navbar-inverse {
             background-color: #FF8000;
             border-color: #FF8000;
+            width: 100%;
         }
 
         .top_header {
@@ -70,6 +75,9 @@
             color: white;
         }
 
+        .bg-info {
+            width: 100%;
+        }
     </style>
 
 
@@ -77,248 +85,358 @@
 </head>
 
 <body>
+    <div class="container-fluid">
+        @{
+            var u = Session["use"] as eWebBanHang.Models.Nguoidung;
+        }
 
-    @{
-        var u = Session["use"] as eWebBanHang.Models.Nguoidung;
-    }
+        <div class="navbar navbar-inverse navbar-fixed-top">
 
-    <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="top_header col-sm-12" style="background-color: #FFAC47 ">
 
-        <div class="top_header col-sm-12" style="background-color: #FFAC47 ">
-
-            <marquee style=" padding: 1px; vertical-align: middle" behavior="scroll" scrollamount="9">
-                <span>
-                    <img src="~/images/hot_deal.png" height="20" width="20" style="margin-top: -5px" />
-                    <a style="color: #1C1C1C">Nhanh chân đặt hàng Iphone 13 ngay tại cửa hàng chúng tôi để được giảm giá 500K</a>
-                    <img src="~/images/iphone13.png" height="20" width="20" />
-                </span>
-            </marquee>
+                <marquee style=" padding: 1px; vertical-align: middle" behavior="scroll" scrollamount="9">
+                    <span>
+                        <img src="~/images/hot_deal.png" height="20" width="20" style="margin-top: -5px" />
+                        <a style="color: #1C1C1C">Nhanh chân đặt hàng Iphone 13 ngay tại cửa hàng chúng tôi để được giảm giá 500K</a>
+                        <img src="~/images/iphone13.png" height="20" width="20" />
+                    </span>
+                </marquee>
 
 
-
-        </div>
-        <div class="container">
-
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <img class="navbar-brand" src="~/images/logowebb.jpg" width="55" height="45" style="padding: 0; margin: 1px 10px 0 0;" />
-                @Html.ActionLink("ShopBanHang", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                <form class="form-inline">
-                    <input class="form-control mr-sm-3" type="search" placeholder="Tìm kiếm sản phẩm..." aria-label="Search">
-
-                </form>
 
             </div>
+            <div class="container">
 
-            <div class="navbar-collapse collapse">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <img class="navbar-brand" src="~/images/logowebb.jpg" width="55" height="45" style="padding: 0; margin: 1px 10px 0 0;" />
+                    @Html.ActionLink("ShopBanHang", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                    <form class="form-inline">
+                        <input class="form-control mr-sm-3" type="search" placeholder="Tìm kiếm sản phẩm..." aria-label="Search">
 
-                <ul class="nav navbar-nav" style="float: left; position: static;">
-                    <li>
-                        <a href="@Url.Action("laptoppartial", "Sanphams")" title="Laptop">
+                    </form>
 
-                            <span>Laptop</span>
+                </div>
 
-                        </a>
+                <div class="navbar-collapse collapse">
 
-                    </li>
+                    <ul class="nav navbar-nav" style="float: left; position: static;">
+                        <li>
+                            <a href="@Url.Action("smartphonepartial", "Sanphams")" title="Laptop">
+                               
+                                <span>Laptop</span>
 
-                    <li>
-                        <a href="@Url.Action("smartphonepartial", "Sanphams")" title="DT">
-                            @*<span><i class="fas fa-desktop"></i></span>*@
-                            <span>Điện thoại</span>
+                            </a>
 
-                        </a>
-                    </li>
-                    <li>
-                        <a href="@Url.Action("tivipartial", "Sanphams")" title="Tivi">
-                            @*<span><i class="fas fa-desktop"></i></span>*@
-                            <span>Tivi</span>
+                        </li>
 
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/Home/Contact" title="LIENHE">
-                            @*<span><i class="fas fa-headphones"></i></span>*@
-                            <span>Liên Hệ</span>
+                        <li>
+                            <a href="@Url.Action("laptoppartial", "Sanphams")" title="DT">
+                                @*<span><i class="fas fa-desktop"></i></span>*@
+                                <span>Điện thoại</span>
 
-                        </a>
-                    </li>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("tivipartial", "Sanphams")" title="Tivi">
+                                @*<span><i class="fas fa-desktop"></i></span>*@
+                                <span>Tivi</span>
 
-                    <li>
-                        <a style="color:white"
-                           class="nav-link"
-                           href="@Url.Action("Index", "DonHangs")">Đơn Hàng</a>
-                    </li>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Home/Contact" title="LIENHE">
+                                @*<span><i class="fas fa-headphones"></i></span>*@
+                                <span>Liên Hệ</span>
 
-                    @{
-                        if (u != null)
-                        {
-                            <li>
-                                <p style="color: antiquewhite; margin: 0px 5px 0px 15px; ">Xin chào : @u.Email</p>
-                                <a href="/User/DangXuat" style="font-size: 12px;margin: 0 0 0 10px; padding: 2px 7px 2px 10px; color: white; -moz-border-radius: 60px; -webkit-border-radius: 60px; border-radius: 60px; background-color: #EB1919; ">
+                            </a>
+                        </li>
 
-                                    ĐĂNG XUẤT
-                                </a>
+                        <li>
+                            <a style="color:white"
+                               class="nav-link"
+                               href="@Url.Action("Index", "DonHangs")">Đơn Hàng</a>
+                        </li>
 
-                            </li>
+
+                        @{
+                            if (u != null)
+                            {
+                                <li>
+                                    <p style="color: antiquewhite; margin: 0px 5px 0px 15px; ">Xin chào : @u.Email</p>
+                                    <a href="/User/DangXuat" style="font-size: 12px;margin: 0 0 0 10px; padding: 2px 7px 2px 10px; color: white; -moz-border-radius: 60px; -webkit-border-radius: 60px; border-radius: 60px; background-color: #EB1919; ">
+
+                                        ĐĂNG XUẤT
+                                    </a>
+
+                                </li>
+                            }
+                            else
+                            {
+
+                                <li style="display: inline-block;  margin-left: 15px"><a style="margin: 10px 7px 10px 10px; padding: 5px 5px 5px 5px; font-size: 15px; background-color: darkslategray; border-radius: 3px" href="/User/Dangky">Đăng ký</a></li>
+
+                                <li style="display: inline-block; "><a style="margin: 10px 10px 10px 7px; padding: 5px 5px 5px 5px; font-size: 15px; background-color: darkslategray; border-radius: 3px" href="/User/Dangnhap">Đăng nhập</a></li>
+
+                            }
                         }
-                        else
-                        {
 
-                            <li style="display: inline-block;  margin-left: 15px"><a style="margin: 10px 7px 10px 10px; padding: 5px 5px 5px 5px; font-size: 15px; background-color: darkslategray; border-radius: 3px" href="/User/Dangky">Đăng ký</a></li>
 
-                            <li style="display: inline-block; "><a style="margin: 10px 10px 10px 7px; padding: 5px 5px 5px 5px; font-size: 15px; background-color: darkslategray; border-radius: 3px" href="/User/Dangnhap">Đăng nhập</a></li>
+                    </ul>
+                    <form class="d-flex" style="float: right">
+                        <a style="padding: 0; font-size: 10px">
+                            @Html.Action("GioHangPartial", "GioHang", new { @style = "color:while; " })
+                            @*<img class="navbar-brand" src="~/images/giohang.png" width="50" height="50" style="padding:0; -moz-border-radius: 60px; -webkit-border-radius: 60px; border-radius: 60px; float: right" />*@
+                        </a>
+                    </form>
 
-                        }
+
+
+                    <!--<div class="" style="float: right; position: relative">
+
+
+    <div class="navbar-brand" style="float: left">-->
+                    @*<div class="col-sm-4 col-md-0" style="font-size:large" style="padding: 20px 20px">Error Team</div>*@
+
+
+                    <!--<!--<div class="col-sm-4 col-md-0" style="padding-left:250px">-->
+                    <!--@*@Html.Action("GioHangPartial", "GioHang", new { @class = "giohang" })*@-->
+                    <!--</div>-->
+                    <!--</div>
+
+    </div>-->
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <br>
+
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <div>
+                <img class="img-responsive" src="~/images/ban2.jpg" />
+            </div>
+            <br />
+        </div>
+
+        <footer class="text-center text-lg-start bg-primary text-muted" style="height:100px;margin-top:20px;display:block;background-color:#FF7000">
+            <!-- Section: Social media -->
+            <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom" style="height:100%;margin-top:20px">
+                <!-- Left -->
+                <div class="me-5 d-none d-lg-block" style="margin-top:50px!important">
+                    <span>Get connected with us on social networks:</span>
+                </div>
+                <!-- Left -->
+                <!-- Right -->
+                <div>
+                    <a href="" class="me-4 text-reset">
+                        <i class="fa fa-facebook"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset">
+                        <i class="fa fa-twitter"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset">
+                        <i class="fa fa-google"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset">
+                        <i class="fa fa-instagram"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset">
+                        <i class="fa fa-linkedin"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset">
+                        <i class="fa fa-github"></i>
+                    </a>
+                </div>
+                <!-- Right -->
+                <div class="bg-primary text-center text-white" style="height:100%;margin-top:20px;background-color:#FF7000 ">
+                    <!-- Grid container -->
+                    <div class="container p-4 pb-0">
+                        <!-- Section: Social media -->
+                        <section class="mb-4" style="height:100%;margin:10px">
+                            <!-- Facebook -->
+                            <a class="btn btn-primary btn-floating m-10"
+                               style="background-color: #3b5998;"
+                               href="#!"
+                               role="button">
+                                <i class="fa fa-facebook-f"></i>
+                            </a>
+
+                            <!-- Twitter -->
+                            <a class="btn btn-primary btn-floating m-10"
+                               style="background-color: #55acee;"
+                               href="#!"
+                               role="button">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+
+                            <!-- Google -->
+                            <a class="btn btn-primary btn-floating m-10"
+                               style="background-color: #dd4b39;"
+                               href="#!"
+                               role="button">
+                                <i class="fa fa-google"></i>
+                            </a>
+
+                            <!-- Instagram -->
+                            <a class="btn btn-primary btn-floating m-10"
+                               style="background-color: #ac2bac;"
+                               href="#!"
+                               role="button">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+
+
+                            <!-- Github -->
+                            <a class="btn btn-primary btn-floating m-10"
+                               style="background-color: #333333;"
+                               href="#!"
+                               role="button">
+                                <i class="fa fa-github"></i>
+                            </a>
+                        </section>
+                        <!-- Section: Social media -->
+                    </div>
+                    <!-- Grid container -->
+                    <!-- Copyright -->
+                    <!-- Copyright -->
+
+                </div>
+                <div class="text-center " style="background-color: rgba(0, 0, 0, 0.2);position:relative;border:1px solid #00ff00;bottom:0px">
+                    © 2021 Copyright:
+                    <a class="text-white" href="">Nhomerrorteam</a>
+                </div>
+        </footer>
+        <!-- Footer -->
+        @*<footer class="bg-info">
+
+                <div class="col-md-12">
+                    <div class="col-md-3 col-sm-6">
+                        <h2>Bảo hành</h2>
+                        <span>Chính sách mua hàng</span>
+                        <br />
+                        <span>Chính sách bảo hành</span>
+                        <br />
+                        <span>Trung tâm bảo hành</span>
+                        <br />
+                        <span>Tra cứu bảo hành</span>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <h2>Liên kết</h2>
+                        <span>Tin tức Mobile</span>
+                        <br />
+                        <span>Lập trình Web</span>
+                        <br />
+                        <span>GenkVN</span>
+                        <br />
+                        <span>Dân trí</span>
+
+
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <h2>Thông tin</h2>
+                        <span>Về chúng tôi</span>
+                        <br />
+                        <span>Liên hệ</span>
+                        <br />
+                        <span>Góp ý</span>
+                        <br />
+                        <span>Tra cứu</span>
+                    </div>
+                    <div class="col-md-2 col-sm-6">
+                        <h2>Theo dõi</h2>
+                        <span>Kênh youtube</span>
+                        <br />
+                        <span>Fanpage</span>
+                        <br />
+                        <span>Shopee</span>
+                        <br />
+                        <span>Group</span>
+
+                    </div>
+
+                </div>
+                <hr />
+                <center> <p class="bg-primary">&copy; @DateTime.Now.Year - Error Team</p></center>
+            </footer>*@
+        @*Bong Bong Mess*@
+        <footer>
+            <a id="0764780921" href="tel:0764780921"><div class="call-btn"><noscript><img src="https://netweb.vn/icon/phone.svg" /></noscript><img class=" lazyloaded" src="https://netweb.vn/icon/phone.svg" data-src="https://netweb.vn/icon/phone.svg"> 0764780921</div></a>
+
+            <a href="https://www.facebook.com/duckyei" target="_blank">
+                <div style="position:fixed;bottom:7px;right:12px;z-index:9999;" class="messenger">
+                    <noscript>
+                        <img style="height:58px;" src="https://netweb.vn/icon/messenger_icon.png" />
+                    </noscript>
+                    <img class=" lazyloaded" style="height:58px;" src="https://netweb.vn/icon/messenger_icon.png"
+                         data-src="https://netweb.vn/icon/messenger_icon.png">
+                </div>
+            </a>
+            <a href="https://zalo.me/0828023068" target="_blank" class="numberzalo all">
+                <div style="position:fixed;bottom:70px;right:20px;z-index:9999;" class="zalo">
+                    <noscript>
+                        <img style="height:58px;" src="https://lh3.googleusercontent.com/X7JUHmDCeT845_MgAttYi_F8RsiHQr9ufnRqk2SiyiJZ1KBZgZek9wFOMuOwDuy4leA=w300" />
+                    </noscript>
+                    <img class=" lazyloaded" style="height:50px; " src="https://lh3.googleusercontent.com/X7JUHmDCeT845_MgAttYi_F8RsiHQr9ufnRqk2SiyiJZ1KBZgZek9wFOMuOwDuy4leA=w300"
+                         alt="0764780921">
+                </div>
+            </a>
+            @*<a href="https://zalo.me/0828023068" class="numberzalo all" rel="nofollow" style="position:fixed;bottom:7px;right:12px;z-index:9999;">
+                    <img src="https://lh3.googleusercontent.com/X7JUHmDCeT845_MgAttYi_F8RsiHQr9ufnRqk2SiyiJZ1KBZgZek9wFOMuOwDuy4leA=w300" alt="0764780921">
+                </a>*@
+            <style>
+                a.numberzalo {
+                    position: fixed;
+                    bottom: 15px;
+                    left: 110px;
+                    cursor: pointer;
+                    z-index: 9999;
+                }
+
+                    a.numberzalo img {
+                        width: 50px;
+                        border-radius: 50%;
                     }
 
 
-                </ul>
-                <form class="d-flex" style="float: right">
-                    <a style="padding: 0; font-size: 10px">
-                        @Html.Action("GioHangPartial", "GioHang", new { @style = "color:while; " })
-                        @*<img class="navbar-brand" src="~/images/giohang.png" width="50" height="50" style="padding:0; -moz-border-radius: 60px; -webkit-border-radius: 60px; border-radius: 60px; float: right" />*@
-                    </a>
-                </form>
-
-                <!--<div class="" style="float: right; position: relative">
-
-
-                <div class="navbar-brand" style="float: left">-->
-                @*<div class="col-sm-4 col-md-0" style="font-size:large" style="padding: 20px 20px">Error Team</div>*@
-
-
-                <!--<!--<div class="col-sm-4 col-md-0" style="padding-left:250px">-->
-                <!--@*@Html.Action("GioHangPartial", "GioHang", new { @class = "giohang" })*@-->
-                <!--</div>-->
-                <!--</div>
-
-                </div>-->
-            </div>
-
-
-        </div>
-    </div>
-
-
-    <br>
-
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <div>
-            <img class="img-responsive" src="~/images/ban2.jpg" />
-        </div>
-        <br />
-    </div>
-    <footer class="bg-info" style="padding-left:50px">
-        <div class="row">
-            <div class="col-md-3 col-sm-6">
-                <h2>Bảo hành</h2>
-                <span>Chính sách mua hàng</span>
-                <br />
-                <span>Chính sách bảo hành</span>
-                <br />
-                <span>Trung tâm bảo hành</span>
-                <br />
-                <span>Tra cứu bảo hành</span>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <h2>Liên kết</h2>
-                <span>Tin tức Mobile</span>
-                <br />
-                <span>Lập trình Web</span>
-                <br />
-                <span>GenkVN</span>
-                <br />
-                <span>Dân trí</span>
-
-
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <h2>Thông tin</h2>
-                <span>Về chúng tôi</span>
-                <br />
-                <span>Liên hệ</span>
-                <br />
-                <span>Góp ý</span>
-                <br />
-                <span>Tra cứu</span>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <h2>Theo dõi</h2>
-                <span>Kênh youtube</span>
-                <br />
-                <span>Fanpage</span>
-                <br />
-                <span>Shopee</span>
-                <br />
-                <span>Group</span>
-
-            </div>
-        </div>
-        <hr />
-        <center> <p class="bg-primary">&copy; @DateTime.Now.Year - Error Team</p></center>
-    </footer>
-    @*Bong Bong Mess*@
-    <footer>
-        <a id="0764780921" href="tel:0764780921"><div class="call-btn"><noscript><img src="https://netweb.vn/icon/phone.svg" /></noscript><img class=" lazyloaded" src="https://netweb.vn/icon/phone.svg" data-src="https://netweb.vn/icon/phone.svg"> 0764780921</div></a>
-
-        <a href="https://www.facebook.com/duckyei" target="_blank"><div style="position:fixed;bottom:7px;right:12px;z-index:9999;" class="messenger"><noscript><img style="height:58px;" src="https://netweb.vn/icon/messenger_icon.png" /></noscript><img class=" lazyloaded" style="height:58px;" src="https://netweb.vn/icon/messenger_icon.png" data-src="https://netweb.vn/icon/messenger_icon.png"></div></a>
-
-        <style>
-            .call-btn {
-                position: fixed;
-                bottom: 24px;
-                right: 165px;
-                background: #37c837;
-                text-align: center;
-                color: #fff;
-                box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
-                z-index: 99;
-                transition: all .3s;
-                font-weight: 700;
-                border-radius: 5px;
-                padding: 3px 10px 0px 38px;
-                font-size: 18px;
-                line-height: 25px;
-            }
-
-                .call-btn img {
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                    padding: 5px 7px;
-                    background: rgba(0,0,0,0.3);
-                    border-radius: 5px 0 0 5px;
-                    animation: blinking 1s ease-in-out infinite;
+                .call-btn {
+                    position: fixed;
+                    bottom: 24px;
+                    right: 90px;
+                    background: #FF8000;
+                    text-align: center;
+                    color: #fff;
+                    box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
+                    z-index: 99;
+                    transition: all .3s;
+                    font-weight: 700;
+                    border-radius: 5px;
+                    padding: 3px 10px 0px 38px;
+                    font-size: 18px;
+                    line-height: 25px;
                 }
-        </style>
-    </footer>
-    <footer>
-        <a href="https://zalo.me/0828023068" class="numberzalo all" rel="nofollow" style="left: 220px">
-            <img src="https://lh3.googleusercontent.com/X7JUHmDCeT845_MgAttYi_F8RsiHQr9ufnRqk2SiyiJZ1KBZgZek9wFOMuOwDuy4leA=w300" alt="0764780921">
-        </a>
-        <style>
-            a.numberzalo {
-                position: fixed;
-                bottom: 15px;
-                left: 110px;
-                cursor: pointer;
-                z-index: 9999;
-            }
 
-                a.numberzalo img {
-                    width: 50px;
-                    border-radius: 50%;
-                }
-        </style>
-    </footer>
+                    .call-btn img {
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        padding: 5px 7px;
+                        background: rgba(0,0,0,0.3);
+                        border-radius: 5px 0 0 5px;
+                        animation: blinking 1s ease-in-out infinite;
+                    }
+            </style>
+        </footer>
 
+    </div>
 
 
 
@@ -327,4 +445,3 @@
     @RenderSection("scripts", required: false)
 </body>
 </html>
-

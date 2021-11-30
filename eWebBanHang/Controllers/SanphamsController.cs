@@ -37,9 +37,8 @@ namespace eWebBanHang.Controllers
         }
         public ActionResult sanphamshowindex()
         {
-            var sp = db.Sanphams.Where(n => n.Mahang == 1).Take(3).ToList();
-            sp.AddRange(db.Sanphams.Where(n => n.Mahang == 2).Take(3).ToList());
-            sp.AddRange(db.Sanphams.Where(n => n.Mahang == 3).Take(3).ToList());
+            var sp = db.Sanphams.ToList();
+ 
           
 
             return PartialView(sp);

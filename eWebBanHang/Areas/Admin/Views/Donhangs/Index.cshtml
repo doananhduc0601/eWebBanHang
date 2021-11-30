@@ -7,9 +7,9 @@
 
 <h2>Index</h2>
 
-<p>
+@*<p>
     @Html.ActionLink("Create New", "Create")
-</p>
+</p>*@
 <table class="table">
     <tr>
         <th>
@@ -28,9 +28,14 @@
             @Html.DisplayNameFor(model => model.Nguoidung.Hoten)
         </th>
         <th>
+            Chi tiết
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Nguoidung.Dienthoai)
         </th>
- 
+        <th>
+            @Html.DisplayNameFor(model => model.Nguoidung.Diachi)
+        </th>
 
         <th></th>
     </tr>
@@ -45,7 +50,7 @@
         @Html.DisplayFor(modelItem => item.Ngaydat)
     </td>
     <td>
-        @Html.DisplayFor(modelItem => item.Tinhtrang)
+        Chờ giao hàng
     </td>
     <td>
         @Html.DisplayFor(modelItem => item.MaNguoidung)
@@ -55,14 +60,17 @@
     </td>
 
     <td>
-        @Html.ActionLink("Chi tiết", "Details", new { id = item.Madon },null)
+        @Html.ActionLink("Chi tiết", "Details", new { id = item.Madon }, null)
     </td>
     <td>
         @Html.DisplayFor(modelItem => item.Nguoidung.Dienthoai)
     </td>
     <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.Madon }) |
-        @Html.ActionLink("Details", "Details", new { id = item.Madon }) |
+        @Html.DisplayFor(modelItem => item.Nguoidung.Diachi)
+    </td>
+    <td>
+        @*@Html.ActionLink("Edit", "Edit", new { id = item.Madon }) |*@
+        @*@Html.ActionLink("Details", "Details", new { id = item.Madon }) |*@
         @Html.ActionLink("Delete", "Delete", new { id = item.Madon })
     </td>
 </tr>

@@ -1,16 +1,16 @@
 ﻿
+<div class="container" style="background:white">
+    <div class="row" style="margin:10px">
 
-<div class="row">
-    
-    <div class="container-fluid" style="background:white">
+
         @foreach (var item in Model)
         {
 
-            <div class="col-md-2 col-lg-2 col-sm-2 col-xs-3 col-xl-2" style="background: #f7f3f2; border: 0px solid #ff6a00; margin: 10px; width: 200px !important; height: 400px; padding: 20px 5px 5px 5px ; margin: 10px; border-radius: 5px ">
+            <div class="col-md-2 col-lg-2 col-sm-2 col-xs-3 col-xl-2" style="background: #d6d6c2; border: 0px solid #ff6a00; margin: 10px; width: 200px !important; height: 400px; padding: 20px 5px 5px 5px ; margin: 10px; border-radius: 5px ">
                 <div class="card mb-30">
                     <a class="card-img-tiles" href="@Url.Action("xemchitiet", new {@Masp=item.Masp })" data-abc="true">
                         <div class="inner" style="margin: 0; text-align: center !important">
-                            <div class="main-img"><img src=@Url.Content(item.Anhbia) class="img-responsive" alt="" /></div>
+                            <div class="main-img"><img src=@Url.Content(item.Anhbia) class="img-responsive" alt=""style="border-radius:10px"/></div>
                         </div>
                     </a>
                     <div class="card-body text-center">
@@ -27,6 +27,7 @@
                     </div>
                 </div>
             </div>
+
 
         }
     </div>
